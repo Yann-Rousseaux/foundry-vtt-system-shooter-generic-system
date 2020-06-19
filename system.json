@@ -22,8 +22,8 @@
   "gridUnits": "m",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "resources",
-  "url": "",
-  "manifest": "",
-  "download": "",
+  "url": "https://github.com/Yann-Rousseaux/foundry-vtt-system-shooter-generic-system",
+  "manifest": "https://raw.githubusercontent.com/Yann-Rousseaux/foundry-vtt-system-shooter-generic-system/master/system.json",
+  "download": "https://github.com/Yann-Rousseaux/foundry-vtt-system-shooter-generic-system/raw/master/archives/foundry-vtt-system-shooter-generic-system.zip",
   "license": "LICENSE.txt"
 }
