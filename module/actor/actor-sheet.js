@@ -2,13 +2,13 @@
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class BoilerplateActorSheet extends ActorSheet {
+export class shootergenericsystemActorSheet extends ActorSheet {
 
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["boilerplate", "sheet", "actor"],
-      template: "systems/boilerplate/templates/actor/actor-sheet.html",
+      classes: ["shootergenericsystem", "sheet", "actor"],
+      template: "systems/shootergenericsystem/templates/actor/actor-sheet.html",
       width: 600,
       height: 600,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
@@ -24,69 +24,8 @@ export class BoilerplateActorSheet extends ActorSheet {
     for (let attr of Object.values(data.data.attributes)) {
       attr.isCheckbox = attr.dtype === "Boolean";
     }
-
-    // Prepare items.
-    if (this.actor.data.type == 'character') {
-      this._prepareCharacterItems(data);
-    }
-
     return data;
   }
-
-  /**
-   * Organize and classify Items for Character sheets.
-   *
-   * @param {Object} actorData The actor to prepare.
-   *
-   * @return {undefined}
-   */
-  _prepareCharacterItems(sheetData) {
-    const actorData = sheetData.actor;
-
-    // Initialize containers.
-    const gear = [];
-    const features = [];
-    const spells = {
-      0: [],
-      1: [],
-      2: [],
-      3: [],
-      4: [],
-      5: [],
-      6: [],
-      7: [],
-      8: [],
-      9: []
-    };
-
-    // Iterate through items, allocating to containers
-    // let totalWeight = 0;
-    for (let i of sheetData.items) {
-      let item = i.data;
-      i.img = i.img || DEFAULT_TOKEN;
-      // Append to gear.
-      if (i.type === 'item') {
-        gear.push(i);
-      }
-      // Append to features.
-      else if (i.type === 'feature') {
-        features.push(i);
-      }
-      // Append to spells.
-      else if (i.type === 'spell') {
-        if (i.data.spellLevel != undefined) {
-          spells[i.data.spellLevel].push(i);
-        }
-      }
-    }
-
-    // Assign and return
-    actorData.gear = gear;
-    actorData.features = features;
-    actorData.spells = spells;
-  }
-
-  /* -------------------------------------------- */
 
   /** @override */
   activateListeners(html) {
@@ -114,17 +53,9 @@ export class BoilerplateActorSheet extends ActorSheet {
 
     // Rollable abilities.
     html.find('.rollable').click(this._onRoll.bind(this));
-
-    // Drag events for macros.
-    if (this.actor.owner) {
-      let handler = ev => this._onDragItemStart(ev);
-      html.find('li.item').each((i, li) => {
-        if (li.classList.contains("inventory-header")) return;
-        li.setAttribute("draggable", true);
-        li.addEventListener("dragstart", handler, false);
-      });
-    }
   }
+
+  /* -------------------------------------------- */
 
   /**
    * Handle creating a new Owned Item for the actor using initial data defined in the HTML dataset

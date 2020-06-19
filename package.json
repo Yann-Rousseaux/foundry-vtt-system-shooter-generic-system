@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate",
+  "name": "shootergenericsystem",
   "version": "1.0.0",
-  "description": "CSS compiler for the Boilerplate system",
+  "description": "CSS compiler for the Shooter Generic System system",
   "scripts": {
     "build": "gulp",
     "compile": "gulp css",
@@ -11,7 +11,7 @@
   "browserslist": [
     "last 3 versions"
   ],
-  "author": "John Doe",
+  "author": "Ian Wheelbuckets",
   "license": "MIT",
   "private": true,
   "dependencies": {
