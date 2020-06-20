@@ -6,6 +6,9 @@ export class shootergenericsystemActorSheet extends ActorSheet {
 
   /** @override */
   static get defaultOptions() {
+    let height = window.innerHeight;
+    let width = window.innerWidth;
+
     return mergeObject(super.defaultOptions, {
       classes: ["shootergenericsystem", "sheet", "actor"],
       template: "systems/shootergenericsystem/templates/actor/actor-sheet.html",
