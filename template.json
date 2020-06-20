@@ -1,61 +1,200 @@
 {
   "Actor": {
-    "types": ["character"],
+    "types": ["character", "npc"],
     "templates": {
       "base": {
-        "health": {
-          "value": 10,
-          "min": 0,
-          "max": 10
+        "identity": {
+          "biography": ""
         },
-        "power": {
-          "value": 5,
+        "health": {
+          "value": 6,
           "min": 0,
-          "max": 5
+          "max": 6,
+          "label": "Santé"
+        },
+        "abilities": {
+          "act": {
+            "value": 0,
+            "min": 0,
+            "max": 6,
+            "label": "Agir"
+          },
+          "know": {
+            "value": 0,
+            "min": 0,
+            "max": 6,
+            "label": "Savoir"
+          },
+          "endure": {
+            "value": 0,
+            "min": 0,
+            "max": 6,
+            "label": "Endurer"
+          },
+          "force": {
+            "value": 0,
+            "min": 0,
+            "max": 6,
+            "label": "Forcer"
+          },
+          "perceive": {
+            "value": 0,
+            "min": 0,
+            "max": 6,
+            "label": "Percevoir"
+          },
+          "obtrude": {
+            "value": 0,
+            "min": 0,
+            "max": 6,
+            "label": "S'imposer"
+          },
+          "expertise": {
+            "value": 0,
+            "min": 0,
+            "max": 6,
+            "label": "Savoir-faire"
+          },
+          "fight": {
+            "value": 0,
+            "min": 0,
+            "max": 6,
+            "label": "Se battre"
+          },
+          "selfControl": {
+            "value": 0,
+            "min": 0,
+            "max": 6,
+            "label": "Se contrôler"
+          },
+          "target": {
+            "value": 0,
+            "min": 0,
+            "max": 6,
+            "label": "Viser"
+          }
         }
       }
     },
     "character": {
       "templates": ["base"],
-      "biography": "",
-      "attributes": {
-        "level": {
-          "value": 1
+      "resources": {
+        "value": 6,
+        "min": 0,
+        "max": 6,
+        "label": "Ressources"
+      },
+      "specialisation": {
+        "specialty1": {
+          "name": "",
+          "parentAbility": "",
+          "value": 0,
+          "min": 0,
+          "max": 3
+        },
+        "specialty2": {
+          "name": "",
+          "parentAbility": "",
+          "value": 0,
+          "min": 0,
+          "max": 3
+        },
+        "specialty3": {
+          "name": "",
+          "parentAbility": "",
+          "value": 0,
+          "min": 0,
+          "max": 3
+        },
+        "specialty4": {
+          "name": "",
+          "parentAbility": "",
+          "value": 0,
+          "min": 0,
+          "max": 3
+        },
+        "specialty5": {
+          "name": "",
+          "parentAbility": "",
+          "value": 0,
+          "min": 0,
+          "max": 3
+        },
+        "specialty6": {
+          "name": "",
+          "parentAbility": "",
+          "value": 0,
+          "min": 0,
+          "max": 3
+        },
+        "specialty7": {
+          "name": "",
+          "parentAbility": "",
+          "value": 0,
+          "min": 0,
+          "max": 3
+        },
+        "specialty8": {
+          "name": "",
+          "parentAbility": "",
+          "value": 0,
+          "min": 0,
+          "max": 3
+        },
+        "specialty9": {
+          "name": "",
+          "parentAbility": "",
+          "value": 0,
+          "min": 0,
+          "max": 3
+        },
+        "specialty10": {
+          "name": "",
+          "parentAbility": "",
+          "value": 0,
+          "min": 0,
+          "max": 3
         }
       },
-      "abilities": {
-        "str": {
-          "value": 10
+      "identity": {
+        "outlawPersona": {
+          "purpose": "",
+          "blackCoffin": "",
+          "proof": ""
         },
-        "dex": {
-          "value": 10
-        },
-        "con": {
-          "value": 10
-        },
-        "int": {
-          "value": 10
-        },
-        "wis": {
-          "value": 10
-        },
-        "cha": {
-          "value": 10
+        "texasMarshalPersona": {
+          "firstname": "",
+          "lastname": "",
+          "keywords": ""
         }
+      },
+      "experience": {
+        "totalGained": 0,
+        "currentAmount": 0
       }
+    },
+    "npc": {
+      "templates": ["base"]
     }
   },
   "Item": {
-    "types": ["item"],
+    "types": ["item","weapon"],
     "templates": {
       "base": {
-        "description": ""
+        "description": "",
+        "price": 0.0,
+        "quantity": 1,
+        "weight": 0.0
       }
     },
     "item": {
+      "templates": ["base"]
+    },
+    "weapon": {
       "templates": ["base"],
-      "quantity": 1,
-      "weight": 0
+      "parentAbility": "",
+      "damages": 0,
+      "capacity": 1
     }
   }
 }
