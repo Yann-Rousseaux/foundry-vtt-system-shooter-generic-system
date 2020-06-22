@@ -6,15 +6,20 @@ export class shootergenericsystemActorSheet extends ActorSheet {
 
   /** @override */
   static get defaultOptions() {
-    let height = window.innerHeight;
-    let width = window.innerWidth;
+    let sideBarWidth = 300;
+    let sheetHeight = window.innerHeight;
+    let sheetWidth = Math.round((window.innerWidth-sideBarWidth)/2) ;
+    let sheetLeftPostion = 0;
+    let sheetTopPostion = 0;
 
     return mergeObject(super.defaultOptions, {
       classes: ["shootergenericsystem", "sheet", "actor"],
       template: "systems/shootergenericsystem/templates/actor/actor-sheet.html",
-      width: 600,
-      height: 600,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
+      width: sheetWidth,
+      height: sheetHeight,
+      left: sheetLeftPostion,
+      top: sheetTopPostion,
+      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "abilities" }]
     });
   }
 
@@ -92,18 +97,38 @@ export class shootergenericsystemActorSheet extends ActorSheet {
    * @param {Event} event   The originating click event
    * @private
    */
-  _onRoll(event) {
+  async _onRoll(event) {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
 
     if (dataset.roll) {
-      let roll = new Roll(dataset.roll, this.actor.data.data);
+      let roll = new Roll(dataset.roll, this.actor.data.data).roll();
+      let dice = "";
+      roll._dice.forEach(d=> {dice += d.rolls[0].roll + " / "});
+      let result = roll._result;
       let label = dataset.label ? `Rolling ${dataset.label}` : '';
-      roll.roll().toMessage({
+      let htmlData = {
+        "dice": dice,
+        "result": result
+      }
+      let html = await renderTemplate("systems/shootergenericsystem/templates/dice/rollo.html", htmlData);
+
+      let chatData = {
+        user: game.user._id,
+        type: CONST.CHAT_MESSAGE_TYPES.OTHER,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: label
-      });
+        flavor: label,
+        content: html
+      };
+  
+      ChatMessage.create(chatData);
+
+      // roll.roll().toMessage({
+      //   speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+      //   flavor: label,
+      //   content: html
+      // });
     }
   }
 

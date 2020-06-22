@@ -28,10 +28,21 @@ export class shootergenericsystemActor extends Actor {
     // Make modifications to data here. For example:
 
     // Loop through ability scores, and add their modifiers to our sheet output.
-    // for (let [key, ability] of Object.entries(data.abilities)) {
+    for (let [key, ability] of Object.entries(data.abilities)) {
       // Calculate the modifier using d20 rules.
-      // ability.mod = Math.floor((ability.value - 10) / 2);
-    // }
+      if(ability.value>0){
+        let rollFormula = "{";
+
+        for(let start = 0, end =  ability.value; start < end; start++) {
+          rollFormula += "1d6";
+          start < end - 1 ? rollFormula += "," : rollFormula += "}";
+        }
+
+        rollFormula += "cs>3";
+
+        ability.rollFormula = rollFormula;
+      }
+    }
   }
 
 }
