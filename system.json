@@ -2,7 +2,7 @@
   "name": "shootergenericsystem",
   "title": "Shooter Generic System",
   "description": "The Shooter Generic System system for FoundryVTT!",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "minimumCoreVersion": "0.5.3",
   "compatibleCoreVersion": "0.5.3",
   "templateVersion": 2,
