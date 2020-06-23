@@ -104,12 +104,12 @@ export class shootergenericsystemActorSheet extends ActorSheet {
 
     if (dataset.roll) {
       let roll = new Roll(dataset.roll, this.actor.data.data).roll();
-      let dice = "";
-      roll._dice.forEach(d=> {dice += d.rolls[0].roll + " / "});
+      let dices = [];
+      roll._dice.forEach(d=> {dices.push(d.rolls[0].roll)});
       let result = roll._result;
       let label = dataset.label ? `Rolling ${dataset.label}` : '';
       let htmlData = {
-        "dice": dice,
+        "dices": dices,
         "result": result
       }
       let html = await renderTemplate("systems/shootergenericsystem/templates/dice/rollo.html", htmlData);

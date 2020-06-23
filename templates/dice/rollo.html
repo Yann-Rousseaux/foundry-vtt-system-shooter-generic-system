@@ -2,9 +2,8 @@
     {{#if flavor}}
     <div class="dice-flavor">{{flavor}}</div>
     {{/if}}
-    <div class="dice-result">
-        <!-- <div class="dice-formula">{{formula}}</div> -->
-        {{{tooltip}}}
-        <h4 class="dice-total">{{total}}</h4>
-    </div>
+    {{#each dices as |dice|}}
+    <div class="dice-d6">{{dice}}</div>
+    {{/each}}
+    <div class="">{{result}}REUSSITES !</div>
 </div>

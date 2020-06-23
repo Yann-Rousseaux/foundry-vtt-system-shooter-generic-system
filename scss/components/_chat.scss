@@ -1,0 +1,12 @@
+.dice-d6 {
+    width: 100px;
+    height: 100px;
+    
+    .success {
+        background-color: green($color: #137000);
+    }
+
+    .failure {
+        background-color: red($color: #a71010);
+    }
+}

@@ -246,3 +246,16 @@
   flex: 0 0 86px;
   text-align: right;
 }
+
+.shootergenericsystem .dice-d6 {
+  width: 100px;
+  height: 100px;
+}
+
+.shootergenericsystem .dice-d6 .success {
+  background-color: 112;
+}
+
+.shootergenericsystem .dice-d6 .failure {
+  background-color: 167;
+}
