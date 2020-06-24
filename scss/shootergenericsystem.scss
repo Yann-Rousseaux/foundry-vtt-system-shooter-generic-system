@@ -9,11 +9,13 @@
 @import 'global/grid';
 @import 'global/flex';
 
+/* Chat Styles */
+@import 'components/chat';
+
 /* Styles limited to shootergenericsystem sheets */
 .shootergenericsystem {
   @import 'components/forms';
   @import 'components/resource';
   @import 'components/tabs';
   @import 'components/items';
-  @import 'components/chat';
 }

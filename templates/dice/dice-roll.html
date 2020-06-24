@@ -1,0 +1,19 @@
+<div class="flexcol">
+  <div class="dice-roll-annoucement">
+    <div class="">
+      <img class="" src="{{actorImage}}" data-edit="img" title="{{actorName}}" height="50" width="50"/>
+    </div>
+    {{#if flavor}}
+    <div class="dice-roll-flavor">{{flavor}}</div>
+    {{/if}}
+  </div>
+
+  <div class="">
+    {{#each dices as |dice|}}
+    <div class="{{dice.class}}">{{dice.value}}</div>
+    {{/each}}
+  </div>
+  <div class="dice-roll-result">
+    <span>{{resultMsg}}</span>
+  </div>
+</div>

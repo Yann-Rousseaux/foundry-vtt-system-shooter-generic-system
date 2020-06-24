@@ -14,7 +14,7 @@ export class shootergenericsystemActorSheet extends ActorSheet {
 
     return mergeObject(super.defaultOptions, {
       classes: ["shootergenericsystem", "sheet", "actor"],
-      template: "systems/shootergenericsystem/templates/actor/actor-sheet.html",
+      template: CONFIG.GLOBALS.templates.actorSheet,
       width: sheetWidth,
       height: sheetHeight,
       left: sheetLeftPostion,
@@ -105,20 +105,48 @@ export class shootergenericsystemActorSheet extends ActorSheet {
     if (dataset.roll) {
       let roll = new Roll(dataset.roll, this.actor.data.data).roll();
       let dices = [];
-      roll._dice.forEach(d=> {dices.push(d.rolls[0].roll)});
+      roll._dice.forEach( d=> {
+        let rollValue = d.rolls[0].roll;
+        dices.push({
+          "value": rollValue,
+          "class": rollValue > 3 ? CONFIG.GLOBALS.classes.diceShapeSuccess : CONFIG.GLOBALS.classes.diceShapeFailure
+        });
+      });
+
+      dices.sort(function(a, b){
+        return a.value-b.value
+      })
+
       let result = roll._result;
-      let label = dataset.label ? `Rolling ${dataset.label}` : '';
-      let htmlData = {
-        "dices": dices,
-        "result": result
+      let resultMsg = "";
+      if(result == 0) {
+        resultMsg = `${CONFIG.GLOBALS.messages.failure} !`;
+      } else if(result >= 1) {
+        resultMsg = `${result} ${CONFIG.GLOBALS.messages.success} !`;
       }
-      let html = await renderTemplate("systems/shootergenericsystem/templates/dice/rollo.html", htmlData);
+
+      let actorName = this.actor.name;
+      let actorImage = this.actor.img;
+
+      let punchlineArray = CONFIG.GLOBALS.punchlines[dataset.label];
+      let punchline = punchlineArray[Math.floor(Math.random() * punchlineArray.length)];
+
+      let label = `${actorName} ${punchline}`;
+
+      let htmlData = {
+        "flavor": label,
+        "dices": dices,
+        "resultMsg": resultMsg,
+        "actorImage": actorImage,
+        "actorName": actorName,
+      };
+      
+      let html = await renderTemplate(CONFIG.GLOBALS.templates.diceRoll, htmlData);
 
       let chatData = {
         user: game.user._id,
         type: CONST.CHAT_MESSAGE_TYPES.OTHER,
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: label,
         content: html
       };
   

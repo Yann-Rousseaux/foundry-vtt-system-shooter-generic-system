@@ -1,4 +1,5 @@
 // Import Modules
+import { GLOBALS } from "./globals.js";
 import { shootergenericsystemActor } from "./actor/actor.js";
 import { shootergenericsystemActorSheet } from "./actor/actor-sheet.js";
 import { shootergenericsystemItem } from "./item/item.js";
@@ -6,23 +7,23 @@ import { shootergenericsystemItemSheet } from "./item/item-sheet.js";
 
 Hooks.once('init', async function() {
 
-  game.shootergenericsystem = {
-    shootergenericsystemActor,
-    shootergenericsystemItem
-  };
-
-  /**
-   * Set an initiative formula for the system
-   * @type {String}
-   */
+  /** Set an initiative formula for the system */
   CONFIG.Combat.initiative = {
     formula: "1d20",
     decimals: 2
   };
 
+  // Set Global System Vars
+  CONFIG.GLOBALS = GLOBALS;
+
   // Define custom Entity classes
   CONFIG.Actor.entityClass = shootergenericsystemActor;
   CONFIG.Item.entityClass = shootergenericsystemItem;
+
+  game.shootergenericsystem = {
+    shootergenericsystemActor,
+    shootergenericsystemItem
+  };
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);

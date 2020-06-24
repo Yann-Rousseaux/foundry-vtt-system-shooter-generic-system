@@ -1,12 +1,31 @@
-.dice-d6 {
-    width: 100px;
-    height: 100px;
-    
-    .success {
-        background-color: green($color: #137000);
-    }
+div .dice-shape-d6 {
+    width: 20px;
+    height: 20px;
+    margin: 3px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+}
 
-    .failure {
-        background-color: red($color: #a71010);
-    }
+.dice-success {
+    background-color: green;
+}
+.dice-failure {
+    background-color: red;
+}
+
+.dice-roll-result {
+    background-color: darkslategrey;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.dice-roll-annoucement {
+    background-color: darkslategrey;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
 }
