@@ -148,6 +148,10 @@ div .dice-shape-d6 {
   font-weight: bold;
 }
 
+.dice-roll-actor-img {
+  border: none;
+}
+
 /* Styles limited to shootergenericsystem sheets */
 .shootergenericsystem .item-form {
   font-family: "Roboto", sans-serif;
