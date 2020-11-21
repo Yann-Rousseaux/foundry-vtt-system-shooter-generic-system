@@ -105,11 +105,11 @@ export class shootergenericsystemActorSheet extends ActorSheet {
     if (dataset.roll) {
       let roll = new Roll(dataset.roll, this.actor.data.data).roll();
       let dices = [];
-      roll._dice.forEach( d=> {
-        let rollValue = d.rolls[0].roll;
+
+      roll.dice.forEach( d=> {
         dices.push({
-          "value": rollValue,
-          "class": rollValue > 3 ? CONFIG.GLOBALS.classes.diceShapeSuccess : CONFIG.GLOBALS.classes.diceShapeFailure
+          "value": d.values[0],
+          "class": d.values[0] > 3 ? CONFIG.GLOBALS.classes.diceShapeSuccess : CONFIG.GLOBALS.classes.diceShapeFailure
         });
       });
 
@@ -117,7 +117,7 @@ export class shootergenericsystemActorSheet extends ActorSheet {
         return a.value-b.value
       })
 
-      let result = roll._result;
+      let result = roll.result;
       let resultMsg = "";
       if(result == 0) {
         resultMsg = `${CONFIG.GLOBALS.messages.failure} !`;
@@ -128,19 +128,18 @@ export class shootergenericsystemActorSheet extends ActorSheet {
       let actorName = this.actor.name;
       let actorImage = this.actor.img;
 
-      let punchlineArray = CONFIG.GLOBALS.punchlines[dataset.label];
-      let punchline = punchlineArray[Math.floor(Math.random() * punchlineArray.length)];
-
-      let label = `${actorName} ${punchline}`;
+      let punchlineArray = CONFIG.GLOBALS.punchlines[dataset.key];
+      let punchline = `${actorName} ` + punchlineArray[Math.floor(Math.random() * punchlineArray.length)];
 
       let htmlData = {
-        "flavor": label,
+        "punchline": punchline,
         "dices": dices,
         "resultMsg": resultMsg,
         "actorImage": actorImage,
         "actorName": actorName,
+        "rollLabel": dataset.label.toUpperCase()
       };
-      
+
       let html = await renderTemplate(CONFIG.GLOBALS.templates.diceRoll, htmlData);
 
       let chatData = {

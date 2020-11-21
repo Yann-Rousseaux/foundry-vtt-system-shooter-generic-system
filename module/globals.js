@@ -32,9 +32,9 @@ const FILE_DICE_ROLL = `dice-roll.html`;
  * CLASSES *
  * ******* */
 
-const DICE_SHAPE_D6 = `dice-shape-d6`;
-const DICE_SHAPE_SUCCESS = `dice-success`;
-const DICE_SHAPE_FAILURE = `dice-failure`;
+const DICE_SHAPE_D6 = `d-shape-d6`;
+const DICE_SHAPE_SUCCESS = `d-success`;
+const DICE_SHAPE_FAILURE = `d-failure`;
 GLOBALS.classes = Object.freeze({
     "diceShapeSuccess" : `${DICE_SHAPE_D6} ${DICE_SHAPE_SUCCESS}`,
     "diceShapeFailure" : `${DICE_SHAPE_D6} ${DICE_SHAPE_FAILURE}`
@@ -58,8 +58,8 @@ GLOBALS.templates = Object.freeze({
 
 GLOBALS.punchlines = Object.freeze({
     "act" : [
-        "va t'il/elle prendre les choses en main ?",
-        "va t'il/elle agir ?"
+        "va t'il/elle prendre les choses en main ou se laisser aller ?",
+        "va t'il/elle agir ou rester planté comme une moule ?"
     ],
     "know" : [
         "va t'il/elle fouiller dans sa mémoire avec succés ?",

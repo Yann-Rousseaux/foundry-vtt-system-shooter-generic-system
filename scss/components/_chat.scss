@@ -1,21 +1,35 @@
-div .dice-shape-d6 {
+.d-shape-d6 {
     width: 20px;
     height: 20px;
     margin: 3px;
     color: white;
     font-weight: bold;
     text-align: center;
-    display: inline-block;
 }
 
-.dice-success {
+.d-flex-row {
+    display: flex ;
+    flex-direction: row;
+}
+
+.d-flex-col {
+    display: flex ;
+    flex-direction: column;
+}
+
+.d-success {
     background-color: green;
 }
-.dice-failure {
+
+.d-failure {
     background-color: red;
 }
 
-.dice-roll-result {
+.d-roll-inline {
+    display: inline-block;
+}
+
+.d-roll-result {
     background-color: darkslategrey;
     color: white;
     text-align: center;
@@ -23,13 +37,15 @@ div .dice-shape-d6 {
     font-weight: bold;
 }
 
-.dice-roll-annoucement {
+.d-roll-annoucement {
     background-color: darkslategrey;
     color: white;
-    padding: 5px;
-    font-weight: bold;
 }
 
-.dice-roll-actor-img {
+.d-roll-actor-img {
     border: none;
+}
+
+.d-roll-text {
+    color: white;
 }

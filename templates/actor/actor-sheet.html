@@ -34,30 +34,62 @@
 
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item" data-tab="abilities">Aptitudes</a>
-        <a class="item" data-tab="description">Description</a>
+        <a class="item" data-tab="abilities">APTITUDES</a>
+        <a class="item" data-tab="outlaw">HORS-LA-LOI</a>
+        <a class="item" data-tab="texasmarshal">TEXAS MARSHAL</a>
         <a class="item" data-tab="items">Items</a>
     </nav>
 
     {{!-- Sheet Body --}}
     <section class="sheet-body">
-      {{!-- Abilities Tab --}}
+      {{!-- ABILITIES TAB --}}
       <div class="tab abilities" data-group="primary" data-tab="abilities">
         <div class="abilities grid grid-1col">
           {{#each data.abilities as |ability key|}}
             <div class="ability flexrow flex-group-left">
               <label for="data.abilities.{{key}}.value" class="resource-label">{{ability.label}}</label>
-              <input type="text" name="data.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
-              <button class="rollable" data-roll="@abilities.{{key}}.rollFormula" data-label="{{key}}">roll</button>
+              <!-- <div> -->
+                <input class="input-ability" minlength="2" maxlength="2" size="2" type="text" name="data.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
+                <!-- <button class="rollable" data-roll="@abilities.{{key}}.rollFormula" data-key="{{key}}" data-label="{{ability.label}}">roll</button> -->
+                <a class="rollable" data-roll="@abilities.{{key}}.rollFormula" data-key="{{key}}" data-label="{{ability.label}}">
+                  <img src="systems/shootergenericsystem/icons/d6_2_grey.png" alt="roll">
+                </a>
+              <!-- </div> -->
             </div>
           {{/each}}
         </div>
       </div>
 
 
-        {{!-- Biography Tab --}}
-        <div class="tab biography" data-group="primary" data-tab="description">
-            {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
+        {{!-- OUTLAW Tab --}}
+        <div class="tab outlaw" data-group="primary" data-tab="outlaw">
+          
+          <div class="d-flex-col">
+            <label for="data.background.biography" class="resource-label">BIOGRAPHIE</label>
+            <textarea name="data.background.biography" rows="10" cols="30">{{data.background.biography}}</textarea>
+          </div>
+          MOTIVATION
+          <textarea name="data.background.outlawPersona.purpose" rows="10" cols="30">{{data.background.outlawPersona.purpose}}</textarea>
+          CERCUEIL NOIR
+          <textarea name="data.background.outlawPersona.blackCoffin" rows="10" cols="30">{{data.background.outlawPersona.blackCoffin}}</textarea>
+          PREUVES
+          <textarea name="data.background.outlawPersona.proof" rows="10" cols="30">{{data.background.outlawPersona.proof}}</textarea>
+        </div>
+
+        {{!-- TEXAS MARSHAL Tab --}}
+        <div class="tab texasmarshal" data-group="primary" data-tab="texasmarshal">
+          <div class="d-flex-col">
+            <label for="data.background.texasMarshalPersona.firstname" class="resource-label">Prénom</label>
+            <input type="text" name="data.background.texasMarshalPersona.firstname" value="{{data.background.texasMarshalPersona.firstname}}" data-dtype="Number"/>
+          </div>
+          <div class="d-flex-col">
+            <label for="data.background.texasMarshalPersona.lastname" class="resource-label">Nom</label>
+            <input type="text" name="data.background.texasMarshalPersona.lastname" value="{{data.background.texasMarshalPersona.lastname}}" data-dtype="Number"/>
+          </div>
+          <div class="d-flex-col">
+            <label for="data.background.texasMarshalPersona.keywords" class="resource-label">Mots-clés</label>
+            <textarea name="data.background.texasMarshalPersona.keywords" rows="10" cols="30">{{data.background.texasMarshalPersona.keywords}}</textarea>
+          </div>
         </div>
 
         {{!-- Owned Items Tab --}}

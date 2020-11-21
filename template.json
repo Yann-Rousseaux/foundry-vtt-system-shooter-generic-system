@@ -17,7 +17,8 @@
             "value": 0,
             "min": 0,
             "max": 6,
-            "label": "Agir"
+            "label": "Agir",
+            "rollFormula": ""
           },
           "know": {
             "value": 0,

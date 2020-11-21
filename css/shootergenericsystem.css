@@ -115,25 +115,48 @@
 }
 
 /* Chat Styles */
-div .dice-shape-d6 {
+.d-shape-d6 {
   width: 20px;
   height: 20px;
   margin: 3px;
   color: white;
   font-weight: bold;
   text-align: center;
-  display: inline-block;
 }
 
-.dice-success {
+.d-flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.d-flex-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.d-success {
   background-color: green;
 }
 
-.dice-failure {
+.d-failure {
   background-color: red;
 }
 
-.dice-roll-result {
+.d-roll-inline {
+  display: inline-block;
+}
+
+.d-roll-result {
   background-color: darkslategrey;
   color: white;
   text-align: center;
@@ -141,15 +164,17 @@ div .dice-shape-d6 {
   font-weight: bold;
 }
 
-.dice-roll-annoucement {
+.d-roll-annoucement {
   background-color: darkslategrey;
   color: white;
-  padding: 5px;
-  font-weight: bold;
 }
 
-.dice-roll-actor-img {
+.d-roll-actor-img {
   border: none;
+}
+
+.d-roll-text {
+  color: white;
 }
 
 /* Styles limited to shootergenericsystem sheets */
@@ -283,4 +308,22 @@ div .dice-shape-d6 {
   -ms-flex: 0 0 86px;
   flex: 0 0 86px;
   text-align: right;
+}
+
+/* PERSO */
+
+img {
+  border: none;
+  /* margin-left: 15px; */
+}
+
+input[type="text"].input-ability {
+  border: none;
+  width: 60px;
+  height: 60px;
+  /* margin: 0px;
+  padding: 0px; */
+  box-sizing: border-box;
+  text-align: center;
+  background:url(../icons/bullet_hole_60x60.png) no-repeat center; 
 }
