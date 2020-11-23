@@ -1,22 +1,28 @@
 <div class="d-flex-col d-roll-text">
-  <div class="d-flex-row d-roll-annoucement">
-    <div>
+  <!-- title -->
+  <div class="d-flex-row d-roll-title">
+    <div>{{rollLabel}}</div>
+  </div>
+
+  <!-- content -->
+  <div class="d-roll-content">
+    <div class="d-flex-row d-roll-annoucement">
       <img class="d-roll-actor-img" src="{{actorImage}}" data-edit="img" title="{{actorName}}" height="50" width="50"/>
-    </div>
-    <div>
-      <div>{{rollLabel}}</div>
       {{#if punchline}}
-      <div>{{punchline}}</div>
+      <div>{{actorName}} {{punchline}}</div>
       {{/if}}
     </div>
   </div>
 
-  <div class="d-flex-row">
-    {{#each dices as |dice|}}
-    <div class="{{dice.class}}">{{dice.value}}</div>
-    {{/each}}
-  </div>
+  <!-- result -->
   <div class="d-roll-result">
-    <span>{{resultMsg}}</span>
+    <div class="d-flex-row d-roll-result-details">
+      {{#each dices as |dice|}}
+      <div class="{{dice.class}}">{{dice.value}}</div>
+      {{/each}}
+    </div>
+    <div class="d-flex-row d-roll-result-message">
+      <div>{{resultMsg}}</div>
+    </div>
   </div>
 </div>

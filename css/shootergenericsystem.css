@@ -114,69 +114,6 @@
   justify-content: space-between;
 }
 
-/* Chat Styles */
-.d-shape-d6 {
-  width: 20px;
-  height: 20px;
-  margin: 3px;
-  color: white;
-  font-weight: bold;
-  text-align: center;
-}
-
-.d-flex-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-
-.d-flex-col {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-.d-success {
-  background-color: green;
-}
-
-.d-failure {
-  background-color: red;
-}
-
-.d-roll-inline {
-  display: inline-block;
-}
-
-.d-roll-result {
-  background-color: darkslategrey;
-  color: white;
-  text-align: center;
-  padding: 5px;
-  font-weight: bold;
-}
-
-.d-roll-annoucement {
-  background-color: darkslategrey;
-  color: white;
-}
-
-.d-roll-actor-img {
-  border: none;
-}
-
-.d-roll-text {
-  color: white;
-}
-
 /* Styles limited to shootergenericsystem sheets */
 .shootergenericsystem .item-form {
   font-family: "Roboto", sans-serif;
@@ -314,16 +251,101 @@
 
 img {
   border: none;
-  /* margin-left: 15px; */
 }
 
 input[type="text"].input-ability {
   border: none;
   width: 60px;
   height: 60px;
-  /* margin: 0px;
-  padding: 0px; */
   box-sizing: border-box;
   text-align: center;
   background:url(../icons/bullet_hole_60x60.png) no-repeat center; 
+}
+
+/* STYLE DE CHAT */
+.d-roll-text {
+  color: rgb(0, 0, 0);
+}
+
+.d-roll-title {
+  background:url(../img/chat_top.png) no-repeat center;
+  height: 40px;
+  text-align: center;
+  font-weight: bold;
+  align-items: center;
+}
+
+.d-roll-content {
+  background:url(../img/chat_center.png) repeat center;
+}
+
+.d-roll-actor-img {
+  border: none;
+  margin-right: 5px;
+}
+
+.d-roll-annoucement {
+  border-top: 1px solid #6a522c;
+  border-bottom: 1px solid #6a522c;
+  height: 60px;
+  align-items: center;
+}
+
+.d-roll-result {
+  text-align: center;
+  font-weight: bold;
+}
+
+.d-roll-result-details {
+  height: 30px;
+  align-items: center;
+  background:url(../img/chat_center.png) repeat center;
+}
+
+.d-roll-result-message {
+  height: 30px;
+  align-items: center;
+  background:url(../img/chat_bottom.png) no-repeat center;
+}
+
+.d-shape-d6 {
+  width: 20px;
+  height: 20px;
+  margin: 3px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.d-flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.d-flex-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.d-success {
+  background-color: rgb(112, 161, 112);
+}
+
+.d-failure {
+  background-color: rgb(151, 83, 83);
+}
+
+.d-roll-inline {
+  display: inline-block;
 }

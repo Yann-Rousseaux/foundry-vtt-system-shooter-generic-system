@@ -129,7 +129,7 @@ export class shootergenericsystemActorSheet extends ActorSheet {
       let actorImage = this.actor.img;
 
       let punchlineArray = CONFIG.GLOBALS.punchlines[dataset.key];
-      let punchline = `${actorName} ` + punchlineArray[Math.floor(Math.random() * punchlineArray.length)];
+      let punchline = punchlineArray[Math.floor(Math.random() * punchlineArray.length)];
 
       let htmlData = {
         "punchline": punchline,
@@ -150,12 +150,6 @@ export class shootergenericsystemActorSheet extends ActorSheet {
       };
   
       ChatMessage.create(chatData);
-
-      // roll.roll().toMessage({
-      //   speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-      //   flavor: label,
-      //   content: html
-      // });
     }
   }
 
