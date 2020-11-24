@@ -59,7 +59,7 @@ GLOBALS.templates = Object.freeze({
 GLOBALS.punchlines = Object.freeze({
     "act" : [
         "va t'il/elle prendre les choses en main ou se laisser aller ?",
-        "va t'il/elle agir ou rester planté comme une moule ?"
+        "va t'il/elle agir ou rester planté comme une moule sur son bouchot ?"
     ],
     "know" : [
         "va t'il/elle fouiller dans sa mémoire avec succés ?",
@@ -84,6 +84,10 @@ GLOBALS.punchlines = Object.freeze({
     "expertise" : [
         "sait-il/elle ce qu'il/elle fait ?",
         "est-il/elle dans son domaine ?"
+    ],
+    "fight" : [
+        "va t'il/elle placer une grosse beigne ?",
+        "va t'il/elle en coller une grosse ?"
     ],
     "selfControl" : [
         "va t'il/elle garder ses nerfs ?",

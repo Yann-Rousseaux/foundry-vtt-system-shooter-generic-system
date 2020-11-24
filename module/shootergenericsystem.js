@@ -4,6 +4,7 @@ import { shootergenericsystemActor } from "./actor/actor.js";
 import { shootergenericsystemActorSheet } from "./actor/actor-sheet.js";
 import { shootergenericsystemItem } from "./item/item.js";
 import { shootergenericsystemItemSheet } from "./item/item-sheet.js";
+import { preloadHandlebarsTemplates } from "./templates.js";
 
 Hooks.once('init', async function() {
 
@@ -45,4 +46,7 @@ Hooks.once('init', async function() {
   Handlebars.registerHelper('toLowerCase', function(str) {
     return str.toLowerCase();
   });
+
+  // Preload template partials.
+  preloadHandlebarsTemplates();
 });
