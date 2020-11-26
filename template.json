@@ -85,78 +85,8 @@
         "max": 6,
         "label": "Ressources"
       },
-      "specialisation": {
-        "specialty1": {
-          "name": "",
-          "parentAbility": "",
-          "value": 0,
-          "min": 0,
-          "max": 3
-        },
-        "specialty2": {
-          "name": "",
-          "parentAbility": "",
-          "value": 0,
-          "min": 0,
-          "max": 3
-        },
-        "specialty3": {
-          "name": "",
-          "parentAbility": "",
-          "value": 0,
-          "min": 0,
-          "max": 3
-        },
-        "specialty4": {
-          "name": "",
-          "parentAbility": "",
-          "value": 0,
-          "min": 0,
-          "max": 3
-        },
-        "specialty5": {
-          "name": "",
-          "parentAbility": "",
-          "value": 0,
-          "min": 0,
-          "max": 3
-        },
-        "specialty6": {
-          "name": "",
-          "parentAbility": "",
-          "value": 0,
-          "min": 0,
-          "max": 3
-        },
-        "specialty7": {
-          "name": "",
-          "parentAbility": "",
-          "value": 0,
-          "min": 0,
-          "max": 3
-        },
-        "specialty8": {
-          "name": "",
-          "parentAbility": "",
-          "value": 0,
-          "min": 0,
-          "max": 3
-        },
-        "specialty9": {
-          "name": "",
-          "parentAbility": "",
-          "value": 0,
-          "min": 0,
-          "max": 3
-        },
-        "specialty10": {
-          "name": "",
-          "parentAbility": "",
-          "value": 0,
-          "min": 0,
-          "max": 3
-        }
-      },
+      "specialisations": {},
+      "groups": {},
       "identity": {
         "outlawPersona": {
           "purpose": "",

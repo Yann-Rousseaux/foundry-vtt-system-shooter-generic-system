@@ -80,8 +80,9 @@
   -ms-flex-align: center;
   align-items: center;
   text-align: center;
-  padding: 5px;
-  border: 1px solid #999;
+  padding: 3px;
+  /* padding: 5px; */
+  /* border: 1px solid #999; */
 }
 
 .flex-group-left {
@@ -257,6 +258,12 @@ input[type="text"].input-ability {
   border: none;
   width: 60px;
   height: 60px;
+  /* width: 20px;
+  height: 20px; */
+  color: white;
+  font-weight: bold;
+  /* background: black;
+  border-radius: 50%; */
   box-sizing: border-box;
   text-align: center;
   background:url(../icons/bullet_hole_60x60.png) no-repeat center; 
@@ -348,4 +355,43 @@ input[type="text"].input-ability {
 
 .d-roll-inline {
   display: inline-block;
+}
+
+/* ONGLET SPECIALITES */
+.specialisations-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  align-items: center;
+  padding: 0 5px;
+  margin: 5px 0;
+  background: #cfcdc2;
+  border: 1px solid #AAA;
+  border-radius: 2px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.specialisation-key {
+  background: transparent;
+  border: none;
+}
+
+.specialisation-control {
+  flex: 0 0 20px;
+  text-align: center;
+  line-height: 28px;
+  border: none;
+}
+
+.group-button {
+  width: 100%;
+  flex: 1;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px groove #f0f0e0;
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 28px;
+  display: block;
 }

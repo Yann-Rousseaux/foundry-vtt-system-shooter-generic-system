@@ -1,7 +1,7 @@
 {
-    "ABILITY.act": "Act",
+    "ABILITY.act": "Agir",
     
-    "SGS.specialities.addGroup" : "Add Attribute Group",
+    "SGS.specialities.addGroup" : "Ajouter un groupe",
 
     "SIMPLE.NotifyInitFormulaUpdated": "Initiative formula was updated to:",
     "SIMPLE.NotifyInitFormulaInvalid": "Initiative formula was invalid:",
@@ -18,14 +18,14 @@
     "SIMPLE.UnsetTemplate": "Unset Template",
     "SIMPLE.NoTemplate": "No Template",
   
-    "SIMPLE.AttributeKey": "Attribute Key",
-    "SIMPLE.AttributeValue": "Value",
+    "SIMPLE.AttributeKey": "Clé",
+    "SIMPLE.AttributeValue": "Valeur",
     "SIMPLE.AttributeLabel": "Label",
-    "SIMPLE.AttributeDtype": "Data Type",
+    "SIMPLE.AttributeDtype": "Type",
   
     "SIMPLE.DeleteGroup": "Delete group?",
     "SIMPLE.DeleteGroupContent": "Do you wish to delete this group? This will delete the following group and all attributes included in it: ",
   
-    "SIMPLE.Create": "Create",
-    "SIMPLE.New": "New"
+    "SIMPLE.Create": "Créer",
+    "SIMPLE.New": "Nouveau"
 }
