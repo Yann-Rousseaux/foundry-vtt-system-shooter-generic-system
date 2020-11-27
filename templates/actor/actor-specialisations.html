@@ -1,14 +1,21 @@
 <div class="tab" data-group="primary" data-tab="specialisations">
     <div class="specialisations flexrow flex-group-left">
-        <div contenteditable="true">test</div>
+        <!-- <div contenteditable="true">test</div>
         <input type="text" placeholder="Tir aveugle" id="spec-label" class="spec-label" minlength="2" maxlength="20" size="20" name="specLabel" value=""/>
         <input type="number" placeholder="Valeur" class="spec-val" minlength="2" maxlength="2" size="2" name="specValue" value=""/>
         <select class="spec-parent" name="specParents">
             {{#each data.abilities as |ability key|}}
             <option value="{{key}}">{{ability.label}}</option>
             {{/each}}
-        </select>
+        </select> -->
+        AJOUTER
         <a class="spec-add" data-action="add"><i class="fas fa-plus"></i></a>
+    </div>
+
+    <div id="specialisations-list" class="specialisations-list">
+        {{#each data.specialities as |speciality key|}}
+            {{speciality.value}}
+        {{/each}}
     </div>
 
     <!-- <header class="specialisations-header flexrow">

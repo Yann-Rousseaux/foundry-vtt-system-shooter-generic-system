@@ -16,7 +16,7 @@ export class ActorSheetHelper {
     // Perform create and delete actions.
     switch (action) {
       case "add":
-        ActorSheetHelper.openNewSpecialisationDialog();
+        ActorSheetHelper.openNewSpecialisationDialog(event, this.actor);
         // ActorSheetHelper.addSpecialisation(event, this);
         break;
       case "delete":
@@ -25,7 +25,7 @@ export class ActorSheetHelper {
     }
   }
 
-  static async openNewSpecialisationDialog() {
+  static async openNewSpecialisationDialog(event, anActor, app) {
 
     let dialogContent =
       '<div class="specialisations flexrow flex-group-left">'
@@ -43,7 +43,7 @@ export class ActorSheetHelper {
     + '    <option value="obtrude">S\'imposer</option>'
     + '    <option value="expertise">Savoir-Faire</option>'
     + '    <option value="fight">Se battre</option>'
-    + '    <option value="selfControl2">Se contrôler</option>'
+    + '    <option value="selfControl">Se contrôler</option>'
     + '    <option value="target"Viser</option>'
     + '</select>'
     + '</div>';
@@ -55,13 +55,61 @@ export class ActorSheetHelper {
             addValue: {
                 label: "Ajouter",
                 callback: async (html) => {
-                    let label = html.find("#spec-label")[0].value;
-                    let value = html.find("#spec-value")[0].value;
-                    let parent = html.find("#spec-parent")[0].value;
+                  
+                  let newSpeciality = {
+                    "label": html.find("#spec-label")[0].value,
+                    "value": html.find("#spec-value")[0].value,
+                    "parent": html.find("#spec-parent")[0].value
+                  };
+                  
+                  let key = ActorSheetHelper.stringToKey(newSpeciality.label);
+
+                  anActor.data.data.specialisations[key] = newSpeciality;
+
+                  anActor.update(anActor.data);
                 }
             }
         }
     }).render(true);
+  }
+
+  static stringToKey(word) {
+    let key = '';
+    word.split(' ').forEach(element => {
+      let formatedElement = element.trim().replace(/\s/g, '').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      key = key.concat(formatedElement.charAt(0).toUpperCase() + formatedElement.slice(1));
+    });
+    return key.charAt(0).toLowerCase() + key.slice(1);
+  }
+
+  /**
+   * Validate whether or not a group name can be used.
+   * @param {string} groupName Groupname to validate
+   * @returns {boolean}
+   */
+  static validateGroup(groupName, entity) {
+    let groups = Object.keys(entity.object.data.data.groups);
+    let attributes = Object.keys(entity.object.data.data.specialisations).filter(a => !groups.includes(a));
+
+    // Check for duplicate group keys.
+    if ( groups.includes(groupName) ) {
+      ui.notifications.error(game.i18n.localize("SIMPLE.NotifyGroupDuplicate") + ` (${groupName})`);
+      return false;
+    }
+
+    // Check for group keys that match attribute keys.
+    if ( attributes.includes(groupName) ) {
+      ui.notifications.error(game.i18n.localize("SIMPLE.NotifyGroupAttrDuplicate") + ` (${groupName})`);
+      return false;
+    }
+
+    // Check for whitespace or periods.
+    if ( groupName.match(/[\s|\.]/i) ) {
+      ui.notifications.error(game.i18n.localize("SIMPLE.NotifyGroupAlphanumeric"));
+      return false;
+    }
+
+    return true;
   }
 
 /**
@@ -206,35 +254,7 @@ export class ActorSheetHelper {
     }
   }
 
-    /**
-   * Validate whether or not a group name can be used.
-   * @param {string} groupName Groupname to validate
-   * @returns {boolean}
-   */
-  static validateGroup(groupName, entity) {
-    let groups = Object.keys(entity.object.data.data.groups);
-    let attributes = Object.keys(entity.object.data.data.specialisations).filter(a => !groups.includes(a));
 
-    // Check for duplicate group keys.
-    if ( groups.includes(groupName) ) {
-      ui.notifications.error(game.i18n.localize("SIMPLE.NotifyGroupDuplicate") + ` (${groupName})`);
-      return false;
-    }
-
-    // Check for group keys that match attribute keys.
-    if ( attributes.includes(groupName) ) {
-      ui.notifications.error(game.i18n.localize("SIMPLE.NotifyGroupAttrDuplicate") + ` (${groupName})`);
-      return false;
-    }
-
-    // Check for whitespace or periods.
-    if ( groupName.match(/[\s|\.]/i) ) {
-      ui.notifications.error(game.i18n.localize("SIMPLE.NotifyGroupAlphanumeric"));
-      return false;
-    }
-
-    return true;
-  }
 
 
 }

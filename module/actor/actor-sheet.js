@@ -47,7 +47,6 @@ export class shootergenericsystemActorSheet extends ActorSheet {
     }
 
     /* SPECIALISATIONS */
-
       // ADD or REMOVE specialisation.
       html
         .find(".specialisations")
