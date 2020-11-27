@@ -1,7 +1,18 @@
 {
     "ABILITY.act": "Agir",
+
+    "SGS.throw": "Lancer",
+
+    "SGS.tab.abilities" : "APTITUDES",
+    "SGS.tab.marshal" : "MARSHAL",
+    "SGS.tab.outlaw" : "HORS-LA-LOI",
+    "SGS.tab.items" : "EQUIPEMENT",
     
     "SGS.specialities.addGroup" : "Ajouter un groupe",
+    
+    "SGS.specialitys.label" : "Label",
+    "SGS.specialitys.value" : "Valeur",
+    "SGS.speciality.parent" : "Aptitude parente",
 
     "SIMPLE.NotifyInitFormulaUpdated": "Initiative formula was updated to:",
     "SIMPLE.NotifyInitFormulaInvalid": "Initiative formula was invalid:",

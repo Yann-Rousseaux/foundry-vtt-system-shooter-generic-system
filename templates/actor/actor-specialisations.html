@@ -1,41 +1,28 @@
-<div class="tab" data-group="primary" data-tab="specialisations">
-    <div class="specialisations flexrow flex-group-left">
-        <!-- <div contenteditable="true">test</div>
-        <input type="text" placeholder="Tir aveugle" id="spec-label" class="spec-label" minlength="2" maxlength="20" size="20" name="specLabel" value=""/>
-        <input type="number" placeholder="Valeur" class="spec-val" minlength="2" maxlength="2" size="2" name="specValue" value=""/>
-        <select class="spec-parent" name="specParents">
-            {{#each data.abilities as |ability key|}}
-            <option value="{{key}}">{{ability.label}}</option>
-            {{/each}}
-        </select> -->
-        AJOUTER
-        <a class="spec-add" data-action="add"><i class="fas fa-plus"></i></a>
-    </div>
-
-    <div id="specialisations-list" class="specialisations-list">
-        {{#each data.specialities as |speciality key|}}
-            {{speciality.value}}
+<table>
+    <thead class="specialisations">
+        <tr>
+            <th>{{localize 'SGS.speciality.label'}}</th>
+            <th>{{localize 'SGS.speciality.value'}}</th>
+            <th>{{localize 'SGS.speciality.parent'}}</th>
+            <th>{{localize 'SGS.throw'}}</th>
+            <th><a class="spec-add" data-action="add"><i class="fas fa-plus"></i></a></th>
+        </tr>
+    </thead>
+    <tbody id="specialisations-list" class="specialisations-list">
+        {{#each data.specialisations as |speciality key|}}
+        <tr class="ability">
+            <td>{{speciality.label}}</td>
+            <td>{{speciality.value}}</td>
+            <td>{{speciality.parent}}</td>
+            <td class="d-flex-item">
+                <a class="rollable" data-roll="" data-key="" data-label="">
+                    <img src="systems/shootergenericsystem/icons/d6_2_grey.png" alt="roll">
+                </a>
+            </td>
+            <td>
+                <a class="spec-add" data-action="add"></a><i class="fas fa-trash"></i></a>
+            </td>
+        </tr>
         {{/each}}
-    </div>
-
-    <!-- <header class="specialisations-header flexrow">
-        <span class="specialisation-key">{{localize "SIMPLE.AttributeKey"}}</span>
-        <span class="specialisation-value">{{localize "SIMPLE.AttributeValue"}}</span>
-        <span class="specialisation-label">{{localize "SIMPLE.AttributeLabel"}}</span>
-        <span class="specialisation-dtype">{{localize "SIMPLE.AttributeDtype"}}</span>
-        <a class="specialisation-control" data-action="create" data-group="{{group}}"><i class="fas fa-plus"></i></a>
-    </header>
-
-    {{!-- Render the attribute list partial. --}}
-    {{> "systems/shootergenericsystem/templates/actor/actor-specialisations-attributes.html" attributes=data.ungroupedAttributes dtypes=dtypes}}
-
-    {{!-- Render the grouped attributes partial and control. --}}
-    <div class="groups">
-        {{> "systems/shootergenericsystem/templates/actor/actor-specialisations-groups.html" attributes=data.groupedAttributes groups=data.groups dtypes=dtypes}}
-
-        <div class="group-controls flexrow">
-            <input class="group-prefix" type="text" val=""/>
-            <a class="group-button group-control" data-action="create-group"><i class="fas fa-plus"></i>{{localize "SGS.specialities.addGroup"}}</a>
-        </div>
-    </div> -->
-</div>
+    </tbody>
+</table>

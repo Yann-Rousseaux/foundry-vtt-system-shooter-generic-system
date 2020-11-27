@@ -335,6 +335,11 @@ input[type="text"].input-ability {
   justify-content: center;
 }
 
+.d-flex-item {
+  flex-grow: 1;
+  text-align: center;
+}
+
 .d-flex-col {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -358,6 +363,10 @@ input[type="text"].input-ability {
 }
 
 /* ONGLET SPECIALITES */
+/* .spec-add {
+  background: #c4ab21;
+} */
+
 .specialisations-header {
   position: sticky;
   top: 0;

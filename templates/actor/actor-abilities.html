@@ -1,13 +1,11 @@
-<div class="tab abilities" data-group="primary" data-tab="abilities">
-  <div class="abilities grid grid-1col">
-    {{#each data.abilities as |ability key|}}
-      <div class="ability flexrow flex-group-left">
-          <label for="data.abilities.{{key}}.value" class="resource-label">{{ability.label}}</label>
-          <input class="input-ability" minlength="2" maxlength="2" size="2" type="text" name="data.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
-          <a class="rollable" data-roll="@abilities.{{key}}.rollFormula" data-key="{{key}}" data-label="{{ability.label}}">
-              <img src="systems/shootergenericsystem/icons/d6_2_grey.png" alt="roll">
-          </a>
-      </div>
-    {{/each}}
-  </div>
+<div class="abilities grid grid-2col">
+  {{#each data.abilities as |ability key|}}
+    <div class="ability flexrow flex-group-left">
+        <label for="data.abilities.{{key}}.value" class="resource-label">{{ability.label}}</label>
+        <input class="input-ability" minlength="2" maxlength="2" size="2" type="text" name="data.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
+        <a class="rollable" data-roll="@abilities.{{key}}.rollFormula" data-key="{{key}}" data-label="{{ability.label}}">
+            <img src="systems/shootergenericsystem/icons/d6_2_grey.png" alt="roll">
+        </a>
+    </div>
+  {{/each}}
 </div>

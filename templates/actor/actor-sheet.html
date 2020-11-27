@@ -1,63 +1,38 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
 
     {{!-- Sheet Header --}}
-    <header class="sheet-header">
-        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
-        <div class="header-fields">
-            {{localize 'ABILITY.act'}}
-            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
-            {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
-            use both the "grid" and "grid-Ncol" class where "N" can be any number
-            from 1 to 12 and will create that number of columns.  --}}
-            <div class="resources grid grid-2col">
-              {{!-- "flex-group-center" is also defined in the _grid.scss file
-              and it will add a small amount of padding, a border, and will
-              center all of its child elements content and text. --}}
-              <div class="resource flex-group-center">
-                  <label for="data.health.value" class="resource-label">{{data.health.label}}</label>
-                  <div class="resource-content flexrow flex-center flex-between">
-                    <input type="text" name="data.health.value" value="{{data.health.value}}" data-dtype="Number"/>
-                    <span> / </span>
-                    <input type="text" name="data.health.max" value="{{data.health.max}}" data-dtype="Number"/>
-                  </div>
-              </div>
-              <div class="resource flex-group-center">
-                  <label for="data.resources.value" class="resource-label">{{data.resources.label}}</label>
-                  <div class="resource-content flexrow flex-center flex-between">
-                    <input type="text" name="data.resources.value" value="{{data.resources.value}}" data-dtype="Number"/>
-                    <span> / </span>
-                    <input type="text" name="data.resources.max" value="{{data.resources.max}}" data-dtype="Number" readonly/>
-                  </div>
-              </div>
-          </div>
-        </div>
-    </header>
+      {{> "systems/shootergenericsystem/templates/actor/actor-sheet-header.html"}}
 
     {{!-- Sheet Tab Navigation --}}
-    <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item" data-tab="abilities">APTITUDES</a>
-        <a class="item" data-tab="specialisations">SPECIALITÉS</a>
-        <a class="item" data-tab="outlaw">HORS-LA-LOI</a>
-        <a class="item" data-tab="texasmarshal">MARSHAL</a>
-        <a class="item" data-tab="items">ITEMS</a>
-    </nav>
+      <nav class="sheet-tabs tabs" data-group="primary">
+          <a class="item" data-tab="abilities">{{localize 'SGS.tab.abilities'}}</a>
+          <a class="item" data-tab="outlaw">{{localize 'SGS.tab.outlaw'}}</a>
+          <a class="item" data-tab="texasmarshal">{{localize 'SGS.tab.marshal'}}</a>
+          <a class="item" data-tab="items">{{localize 'SGS.tab.items'}}</a>
+      </nav>
 
     {{!-- Sheet Body --}}
-    <section class="sheet-body">
-      {{!-- ABILITIES TAB --}}
-      {{> "systems/shootergenericsystem/templates/actor/actor-abilities.html" attributes=data.abilities dtypes=dtypes}}
+      <section class="sheet-body">
+        {{!-- ABILITIES AND SPECIALISATIONS TAB --}}
+        <div class="tab abilities" data-group="primary" data-tab="abilities">
+          {{> "systems/shootergenericsystem/templates/actor/actor-abilities.html" attributes=data.abilities dtypes=dtypes}}
+          {{> "systems/shootergenericsystem/templates/actor/actor-specialisations.html"}}
+        </div>
 
-      {{!-- SPECIALISATIONS TAB --}}
-      {{> "systems/shootergenericsystem/templates/actor/actor-specialisations.html"}}
+        {{!-- OUTLAW Tab --}}
+        <div class="tab outlaw" data-group="primary" data-tab="outlaw">
+          {{> "systems/shootergenericsystem/templates/actor/actor-outlaw.html"}}
+        </div>
 
-      {{!-- OUTLAW Tab --}}
-      {{> "systems/shootergenericsystem/templates/actor/actor-outlaw.html"}}
+        {{!-- TEXAS MARSHAL Tab --}}
+        <div class="tab texasmarshal" data-group="primary" data-tab="texasmarshal">
+          {{> "systems/shootergenericsystem/templates/actor/actor-marshal.html"}}
+        </div>
 
-      {{!-- TEXAS MARSHAL Tab --}}
-      {{> "systems/shootergenericsystem/templates/actor/actor-marshal.html"}}
-
-      {{!-- ITEMS Tab --}}
-      {{> "systems/shootergenericsystem/templates/actor/actor-items.html"}}
-    </section>
+        {{!-- ITEMS Tab --}}
+        <div class="tab items" data-group="primary" data-tab="items">
+          {{> "systems/shootergenericsystem/templates/actor/actor-items.html"}}
+        </div>
+      </section>
 </form>
 
