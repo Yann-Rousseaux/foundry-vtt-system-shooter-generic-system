@@ -7,11 +7,20 @@
     "SGS.tab.marshal" : "MARSHAL",
     "SGS.tab.outlaw" : "HORS-LA-LOI",
     "SGS.tab.items" : "EQUIPEMENT",
+
+    "SGS.marshal.firstname" : "Prénom",
+    "SGS.marshal.lastname" : "Nom",
+    "SGS.marshal.keywords" : "Mots-Clés",
+
+    "SGS.outlaw.biography" : "Biographie",
+    "SGS.outlaw.motivation" : "Motivation",
+    "SGS.outlaw.coffin" : "Cercueil noir",
+    "SGS.outlaw.evidence" : "Preuves",
     
     "SGS.specialities.addGroup" : "Ajouter un groupe",
     
-    "SGS.specialitys.label" : "Label",
-    "SGS.specialitys.value" : "Valeur",
+    "SGS.speciality.label" : "Label",
+    "SGS.speciality.value" : "Valeur",
     "SGS.speciality.parent" : "Aptitude parente",
 
     "SIMPLE.NotifyInitFormulaUpdated": "Initiative formula was updated to:",

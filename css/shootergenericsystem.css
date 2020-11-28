@@ -187,26 +187,7 @@
   padding: 0 8px;
 }
 
-.shootergenericsystem .resource-label {
-  font-weight: bold;
-  text-transform: uppercase;
-}
 
-.shootergenericsystem .tabs {
-  height: 40px;
-  border-top: 1px solid #AAA;
-  border-bottom: 1px solid #AAA;
-}
-
-.shootergenericsystem .tabs .item {
-  line-height: 40px;
-  font-weight: bold;
-}
-
-.shootergenericsystem .tabs .item.active {
-  text-decoration: underline;
-  text-shadow: none;
-}
 
 .shootergenericsystem .items-list {
   list-style: none;
@@ -248,6 +229,35 @@
   text-align: right;
 }
 
+/* NAVIGATION */
+
+.sheet nav.sheet-tabs {
+  height: 40px;
+  flex: 0 0 32px;
+  margin: 4px 0;
+  line-height: 32px;
+  border: none;
+}
+
+.shootergenericsystem .tabs {
+  height: 40px;
+  /* border-bottom: 1px solid #AAA; */
+}
+
+.shootergenericsystem .tabs .item {
+  line-height: 40px;
+  font-weight: bold;
+  border-top: 1px solid rgb(0, 0, 0);
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.shootergenericsystem .tabs .item.active {
+  /* text-decoration: underline; */
+  text-shadow: none;
+  color: white;
+  background-color: #000;
+}
+
 /* PERSO */
 
 img {
@@ -256,17 +266,37 @@ img {
 
 input[type="text"].input-ability {
   border: none;
-  width: 60px;
-  height: 60px;
-  /* width: 20px;
-  height: 20px; */
+  width: 30px;
+  height: 30px;
   color: white;
   font-weight: bold;
-  /* background: black;
-  border-radius: 50%; */
+  background: black;
+  border-radius: 50%;
   box-sizing: border-box;
   text-align: center;
-  background:url(../icons/bullet_hole_60x60.png) no-repeat center; 
+}
+
+/*abilities */
+.ability {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+  align-items: center;
+}
+
+.shootergenericsystem .ability-label {
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 150px;
+}
+
+.ability-rollable {
+  margin-left: 10px;
+  height: 30px;
+}
+
+.specialisation {
+  align-items: center;
 }
 
 /* STYLE DE CHAT */

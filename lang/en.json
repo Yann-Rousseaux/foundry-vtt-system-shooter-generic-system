@@ -14,6 +14,15 @@
     "SGS.tab.outlaw" : "OUTLAW",
     "SGS.tab.items" : "ITEMS",
 
+    "SGS.marshal.firstname" : "Firstname",
+    "SGS.marshal.lastname" : "Lastname",
+    "SGS.marshal.keywords" : "Keywords",
+
+    "SGS.outlaw.biography" : "Biography",
+    "SGS.outlaw.motivation" : "Motivation",
+    "SGS.outlaw.coffin" : "Black Coffin",
+    "SGS.outlaw.evidence" : "Evidence",
+
     "SIMPLE.NotifyInitFormulaUpdated": "Initiative formula was updated to:",
     "SIMPLE.NotifyInitFormulaInvalid": "Initiative formula was invalid:",
     "SIMPLE.NotifyGroupDuplicate": "Attribute group already exists.",
