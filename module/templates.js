@@ -22,3 +22,7 @@ export const preloadHandlebarsTemplates = async function() {
   // Load the template parts
   return loadTemplates(templatePaths);
 };
+
+Handlebars.registerHelper('loud', function (aString) {
+  return aString.toUpperCase()
+})

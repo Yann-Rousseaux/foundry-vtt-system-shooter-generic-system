@@ -32,13 +32,13 @@ const FILE_DICE_ROLL = `dice-roll.html`;
  * CLASSES *
  * ******* */
 
-const DICE_SHAPE_D6 = `d-shape-d6`;
-const DICE_SHAPE_SUCCESS = `d-success`;
-const DICE_SHAPE_FAILURE = `d-failure`;
-GLOBALS.classes = Object.freeze({
-    "diceShapeSuccess" : `${DICE_SHAPE_D6} ${DICE_SHAPE_SUCCESS}`,
-    "diceShapeFailure" : `${DICE_SHAPE_D6} ${DICE_SHAPE_FAILURE}`
-});
+// const DICE_SHAPE_D6 = `d-shape-d6`;
+// const DICE_SHAPE_SUCCESS = `d-success`;
+// const DICE_SHAPE_FAILURE = `d-failure`;
+// GLOBALS.classes = Object.freeze({
+//     "diceShapeSuccess" : `${DICE_SHAPE_D6} ${DICE_SHAPE_SUCCESS}`,
+//     "diceShapeFailure" : `${DICE_SHAPE_D6} ${DICE_SHAPE_FAILURE}`
+// });
 
 /* ******************* *
  * TEMPLATES AND PATHS *

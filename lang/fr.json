@@ -23,6 +23,9 @@
     "SGS.speciality.value" : "Valeur",
     "SGS.speciality.parent" : "Aptitude parente",
 
+    "SGS.resources.health" : "Santé",
+    "SGS.resources.resources" : "Ressources",
+
     "SIMPLE.NotifyInitFormulaUpdated": "Initiative formula was updated to:",
     "SIMPLE.NotifyInitFormulaInvalid": "Initiative formula was invalid:",
     "SIMPLE.NotifyGroupDuplicate": "Attribute group already exists.",

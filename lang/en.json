@@ -23,6 +23,9 @@
     "SGS.outlaw.coffin" : "Black Coffin",
     "SGS.outlaw.evidence" : "Evidence",
 
+    "SGS.resources.health" : "Health",
+    "SGS.resources.resources" : "Resources",
+
     "SIMPLE.NotifyInitFormulaUpdated": "Initiative formula was updated to:",
     "SIMPLE.NotifyInitFormulaInvalid": "Initiative formula was invalid:",
     "SIMPLE.NotifyGroupDuplicate": "Attribute group already exists.",

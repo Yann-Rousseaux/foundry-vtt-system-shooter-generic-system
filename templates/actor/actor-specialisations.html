@@ -1,28 +1,39 @@
-<table>
-    <thead class="specialisations">
+<table class="specialisations">
+    <thead class="specialisations-header">
         <tr>
             <th>{{localize 'SGS.speciality.label'}}</th>
             <th>{{localize 'SGS.speciality.value'}}</th>
             <th>{{localize 'SGS.speciality.parent'}}</th>
             <th>{{localize 'SGS.throw'}}</th>
-            <th><a class="spec-add" data-action="add"><i class="fas fa-plus"></i></a></th>
+            <th><a class="spec-add-or-remove" data-action="add"><i class="fas fa-plus"></i></a></th>
         </tr>
     </thead>
-    <tbody id="specialisations-list" class="specialisations-list">
-        {{#each data.specialisations as |speciality key|}}
-        <tr class="specialisation">
-            <td>{{speciality.label}}</td>
-            <td>{{speciality.value}}</td>
-            <td>{{speciality.parent}}</td>
+    <tbody>
+        {{#each data.specialisations as | specialisation key|}}
+        {{#if specialisation}}
+        <tr class="spec">
+            <td>{{specialisation.label}}</td>
+            <td>{{specialisation.value}}</td>
+            <td>{{specialisation.parent}}</td>
             <td class="d-flex-item">
-                <a class="rollable" data-roll="" data-key="" data-label="">
+                <a  class="roll-spec"
+                    data-spec_value="{{specialisation.value}}" 
+                    data-spec_label="{{specialisation.label}}"
+                    data-spec_key="{{key}}" 
+                    data-ability_value="{{specialisation.parentValue}}" 
+                    data-ability_label="{{specialisation.parent}}"
+                    data-type="specialisation"
+                >
                     <img src="systems/shootergenericsystem/icons/d6_2_black.png" alt="roll">
                 </a>
             </td>
             <td>
-                <a class="spec-add" data-action="add"></a><i class="fas fa-trash"></i></a>
+                <a class="spec-add-or-remove" data-action="remove" data-key="{{key}}">
+                    <i class="fas fa-trash"></i>
+                </a>
             </td>
         </tr>
+        {{/if}}
         {{/each}}
     </tbody>
 </table>

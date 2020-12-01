@@ -10,7 +10,7 @@ export class shootergenericsystemActorSheet extends ActorSheet {
   static get defaultOptions() {
     let sideBarWidth = 300;
     let sheetHeight = window.innerHeight;
-    let sheetWidth = Math.round((window.innerWidth-sideBarWidth)/2) ;
+    let sheetWidth = 550;
     let sheetLeftPostion = 0;
     let sheetTopPostion = 0;
 
@@ -50,12 +50,7 @@ export class shootergenericsystemActorSheet extends ActorSheet {
       // ADD or REMOVE specialisation.
       html
         .find(".specialisations")
-        .on("click", ".spec-add", ActorSheetHelper.onClickSpecialisationControl.bind(this));
-      
-      // ADD specialisation groups.
-      // html
-      //   .find(".groups")
-      //   .on("click", ".group-control", ActorSheetHelper.onClickSpecialisationGroupControl.bind(this));
+        .on("click", ".spec-add-or-remove", ActorSheetHelper.onClickSpecialisationControl.bind(this));
 
     /* ITEMS */
 
@@ -75,9 +70,10 @@ export class shootergenericsystemActorSheet extends ActorSheet {
         this.actor.deleteOwnedItem(li.data("itemId"));
         li.slideUp(200, () => this.render(false));
       });
-
-    // Rollable abilities.
-    html.find('.rollable').click(this._onRoll.bind(this));
+    
+    /* ROLL */
+      html.find('.roll-ability').click(ActorSheetHelper.onRoll.bind(this));
+      html.find('.roll-spec').click(ActorSheetHelper.onRoll.bind(this));
   }
 
   /* -------------------------------------------- */
