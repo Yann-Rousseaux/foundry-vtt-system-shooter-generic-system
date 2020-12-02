@@ -403,6 +403,14 @@ input[type="text"].input-ability {
   background-color: rgb(151, 83, 83);
 }
 
+.d-reroll {
+  background-color: rgb(110, 110, 110);
+}
+
+.d-arrow {
+  color: white;
+}
+
 .d-roll-inline {
   display: inline-block;
 }

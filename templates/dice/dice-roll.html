@@ -18,10 +18,19 @@
   <div class="d-roll-result">
     <div class="d-flex-row d-roll-result-details">
       {{#each dices as |dice|}}
-        {{#if dice.success}}
-        <div class="d-shape-d6 d-success">{{dice.value}}</div>
+        {{#if dice.reroll}}
+          {{#if dice.reroll.success}}
+          <div class="d-shape-d6 d-success">{{dice.reroll.value}}</div>
+          {{else}}
+          <div class="d-shape-d6 d-failure">{{dice.reroll.value}}</div>
+          {{/if}}
+          <span class="d-arrow"><</span><div class="d-shape-d6 d-reroll">{{dice.value}}</div>
         {{else}}
-        <div class="d-shape-d6 d-failure">{{dice.value}}</div>
+          {{#if dice.success}}
+          <div class="d-shape-d6 d-success">{{dice.value}}</div>
+          {{else}}
+          <div class="d-shape-d6 d-failure">{{dice.value}}</div>
+          {{/if}}
         {{/if}}
       {{/each}}
     </div>
