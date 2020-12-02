@@ -81,8 +81,6 @@
   align-items: center;
   text-align: center;
   padding: 3px;
-  /* padding: 5px; */
-  /* border: 1px solid #999; */
 }
 
 .flex-group-left {
@@ -128,12 +126,6 @@
   flex: 0;
 }
 
-/* .shootergenericsystem .sheet-body,
-.shootergenericsystem .sheet-body .tab,
-.shootergenericsystem .sheet-body .tab .editor {
-  height: 100%;
-} */
-
 .shootergenericsystem .tox .tox-editor-container {
   background: #fff;
 }
@@ -141,8 +133,6 @@
 .shootergenericsystem .tox .tox-edit-area {
   padding: 0 8px;
 }
-
-
 
 .shootergenericsystem .items-list {
   list-style: none;
@@ -184,72 +174,75 @@
   text-align: right;
 }
 
-
 /* HEADER */
 
-.shootergenericsystem .sheet-header {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 150px;
-  flex: 0 0 150px;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  margin-bottom: 10px;
-}
+  .shootergenericsystem .sheet-header {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 150px;
+    flex: 0 0 150px;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
 
-.shootergenericsystem .sheet-header .profile-img {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 100px;
-  flex: 0 0 100px;
-  height: 100%;
-  margin-right: 10px;
-}
+  .shootergenericsystem .sheet-header .profile-img {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100px;
+    flex: 0 0 100px;
+    height: 100%;
+    margin-right: 10px;
+  }
 
-.shootergenericsystem .sheet-header .profile-img>img {
-  height: 100%;
-}
+  .shootergenericsystem .sheet-header .profile-img>img {
+    height: 100%;
+  }
 
-.shootergenericsystem .sheet-header .header-fields {
-  -webkit-box-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-}
+  .shootergenericsystem .sheet-header .header-fields {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
 
-.shootergenericsystem .sheet-header h1.charname {
-  height: 50px;
-  padding: 0px;
-  margin: 5px 0;
-  border-bottom: 0;
-}
+  .shootergenericsystem .sheet-header h1.charname {
+    height: 50px;
+    padding: 0px;
+    margin: 5px 0;
+    border-bottom: 0;
+  }
 
-.shootergenericsystem .sheet-header h1.charname input {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-}
+  .shootergenericsystem .sheet-header h1.charname input {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
 
 /* resources */
 
-.resources {
-  text-align: center;
-}
+  .resources {
+    text-align: center;
+  }
 
-input[type="text"].res {
-  background-color: #000;
-  border: none;
-  color: #fff;
-  font-weight: bold;
-}
+  input[type="text"] {
+    border-radius: 0px;
+  }
+
+  input[type="text"].res {
+    background-color: #000;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+  }
 
 /* NAVIGATION */
 

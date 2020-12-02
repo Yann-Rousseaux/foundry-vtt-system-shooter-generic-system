@@ -41,6 +41,7 @@ export class ActorSheetHelper {
       "</select>" +
       '<select id="spec-parent" class="spec-parent" name="specParents">' +
       '    <option value="act">Agir</option>' +
+      '    <option value="know">Savoir</option>' +
       '    <option value="endure">Endurer</option>' +
       '    <option value="force">Forcer</option>' +
       '    <option value="perceive">Percevoir</option>' +
@@ -48,7 +49,7 @@ export class ActorSheetHelper {
       '    <option value="expertise">Savoir-Faire</option>' +
       '    <option value="fight">Se battre</option>' +
       '    <option value="selfControl">Se contrôler</option>' +
-      '    <option value="target"Viser</option>' +
+      '    <option value="target">Viser</option>' +
       "</select>" +
       "</div>";
 
@@ -175,43 +176,38 @@ export class ActorSheetHelper {
     const element = event.currentTarget;
     const dataset = element.dataset;
 
-    let abilityValue = dataset.ability_value;
+    let abilityValue = parseInt(dataset.ability_value, 10);
     let abilityLabel = dataset.ability_label;
     let abilityKey  = dataset.ability_key;
     let rollLabel = abilityLabel;
     let key = abilityKey;
+    
+    let rollFormula = await ActorSheetHelper.composeFormula(abilityValue);
+    let rollDatas = await ActorSheetHelper.getRollDatas(abilityValue, rollFormula, this.actor, false);
+    let rerollDatas = {};
 
-    if(dataset.type == 'specialisation') {
-      let specValue = dataset.spec_value;
-      // TODO Ligne probablement inutile
-      let specLabel = dataset.spec_label;
+    if(rollDatas.failureCount > 0 && dataset.type == 'specialisation') {
+      let specValue = parseInt(dataset.spec_value, 10);
       rollLabel = dataset.spec_label;
-      let key = dataset.spec_key;
+      key = dataset.spec_key;
+      specValue = specValue < rollDatas.failureCount ? specValue : rollDatas.failureCount;
+      let rerollFormula = await ActorSheetHelper.composeFormula(specValue);
+      rerollDatas = await ActorSheetHelper.getRollDatas(specValue, rerollFormula, this.actor, true);
+
+      rollDatas.successCount = rollDatas.successCount + rerollDatas.successCount;
+
+      rollDatas.dices.forEach((d, index) => {
+        if(!d.success && rerollDatas.dices.length > 0) {
+          d.reroll = rerollDatas.dices.pop();
+        }
+      });
     }
 
-    let Formula = await ActorSheetHelper.composeFormula(abilityValue);
-
-    let roll = new Roll(Formula, this.actor.data.data).roll();
-    let result = roll.result;
-    let dicePool = roll.dice;
-
-    let dices = [];
-
-    dicePool.forEach((d) => {
-      dices.push({
-        value: d.values[0],
-        result: d.values[0] > 3 ? true : false
-      });
-    });
-
-    dices.sort(function (a, b) {
-      return a.value - b.value;
-    });
-
+    // TODO Eventuellement remplacer rollDatas.successCount
     let htmlData = {
       punchline: await ActorSheetHelper.getPunchline(key),
-      resultMsg: await ActorSheetHelper.getResultMessage(result, key),
-      dices: dices,
+      resultMsg: await ActorSheetHelper.getResultMessage(rollDatas.successCount, key),
+      dices: rollDatas.dices,
       actorImage: this.actor.img,
       actorName: this.actor.name,
       rollLabel: rollLabel.toUpperCase()
@@ -232,6 +228,34 @@ export class ActorSheetHelper {
     ChatMessage.create(chatData);
   }
 
+  static async getRollDatas(diceNumber, formula, anActor, reroll) {
+    let roll = new Roll(formula, anActor.data.data).roll();
+    let successCount = roll.result;
+    let dicePool = roll.dice;
+    let failureCount = diceNumber - successCount;
+    let dices = [];
+
+    dicePool.forEach((d) => {
+      dices.push({
+        value: d.values[0],
+        success: d.values[0] > 3 ? true : false,
+        reroll: reroll
+      });
+    });
+
+    dices.sort(function (a, b) {
+      return a.value - b.value;
+    });
+
+    return {
+      "successCount": parseInt(successCount, 10),
+      "failureCount": failureCount,
+      "dices": dices
+    };
+  }
+  /**
+   * @param {*} key 
+   */
   static async getPunchline(key) {
     let punchlineArray = CONFIG.GLOBALS.punchlines[key];
     let punchline = '';
@@ -247,6 +271,11 @@ export class ActorSheetHelper {
     return punchline;
   }
 
+  /**
+   * 
+   * @param {*} result 
+   * @param {*} key 
+   */
   static async getResultMessage(result, key) {
     let resultMsg = "";
 
