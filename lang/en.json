@@ -25,6 +25,10 @@
 
     "SGS.resources.health" : "Health",
     "SGS.resources.resources" : "Resources",
+    "SGS.resources.experience" : "Experience",
+    "SGS.resources.current" : "Current",
+    "SGS.resources.max" : "Max",
+    "SGS.resources.total" : "Total",
 
     "SIMPLE.NotifyInitFormulaUpdated": "Initiative formula was updated to:",
     "SIMPLE.NotifyInitFormulaInvalid": "Initiative formula was invalid:",

@@ -4,33 +4,46 @@
     </div>
     <div class="header-fields">
         <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
-        <div class="resources grid grid-2col">
+        <div class="resources grid grid-3col">
           <div>
-              <div>{{loud (localize 'SGS.resources.health')}}</div>
+              <div class="resource-title">{{localize 'SGS.resources.health'}}</div>
               <div class="resource-content ability">
                 <div>
-                  Actual
+                  {{localize 'SGS.resources.current'}}
                   <input type="text" class="res" minlength="2" maxlength="2" name="data.health.value" value="{{data.health.value}}" data-dtype="Number"/>
                 </div>
                 <div>
-                  Max
+                  {{localize 'SGS.resources.max'}}
                   <input type="text" minlength="2" maxlength="2" name="data.health.max" value="{{data.health.max}}" data-dtype="Number" disabled readonly/>
                 </div>
               </div>
           </div>
           <div>
-              <div>{{loud (localize 'SGS.resources.resources')}}</div>
+              <div class="resource-title">{{localize 'SGS.resources.resources'}}</div>
               <div class="resource-content  ability">
                 <div>
-                  Actual
+                  {{localize 'SGS.resources.current'}}
                   <input type="text" class="res" minlength="2" maxlength="2" name="data.resources.value" value="{{data.resources.value}}" data-dtype="Number"/>
                 </div>
                 <div>
-                  Max
+                  {{localize 'SGS.resources.max'}}
                   <input type="text" minlength="2" maxlength="2" name="data.resources.max" value="{{data.resources.max}}" data-dtype="Number" disabled readonly/>
                 </div>
               </div>
           </div>
+          <div>
+            <div class="resource-title">{{localize 'SGS.resources.experience'}}</div>
+            <div class="resource-content  ability">
+              <div>
+                {{localize 'SGS.resources.current'}}
+                <input type="text" class="res" minlength="2" maxlength="2" name="data.experience.currentAmount" value="{{data.experience.currentAmount}}" data-dtype="Number"/>
+              </div>
+              <div>
+                {{localize 'SGS.resources.total'}}
+                <input type="text" minlength="2" maxlength="2" name="data.experience.totalGained" value="{{data.experience.totalGained}}" data-dtype="Number"/>
+              </div>
+            </div>
+        </div>
       </div>
     </div>
 </header>

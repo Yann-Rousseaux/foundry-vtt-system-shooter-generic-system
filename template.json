@@ -123,8 +123,9 @@
     },
     "weapon": {
       "templates": ["base"],
-      "parentAbility": "",
-      "damages": 0,
+      "ability": "",
+      "damages": 1,
+      "lethality": 0,
       "capacity": 1
     }
   }

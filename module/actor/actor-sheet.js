@@ -8,8 +8,9 @@ export class shootergenericsystemActorSheet extends ActorSheet {
 
   /** @override */
   static get defaultOptions() {
-    let sideBarWidth = 300;
-    let sheetHeight = window.innerHeight;
+    // let sideBarWidth = 300;
+    // let sheetHeight = window.innerHeight;
+    let sheetHeight = 800;
     let sheetWidth = 550;
     let sheetLeftPostion = 0;
     let sheetTopPostion = 0;
@@ -70,8 +71,7 @@ export class shootergenericsystemActorSheet extends ActorSheet {
         this.actor.deleteOwnedItem(li.data("itemId"));
         li.slideUp(200, () => this.render(false));
       });
-    
-    /* ROLL */
+
       html.find('.roll-ability').click(ActorSheetHelper.onRoll.bind(this));
       html.find('.roll-spec').click(ActorSheetHelper.onRoll.bind(this));
   }

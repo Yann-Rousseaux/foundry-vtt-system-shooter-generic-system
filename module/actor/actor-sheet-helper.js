@@ -208,7 +208,7 @@ export class ActorSheetHelper {
       punchline: await ActorSheetHelper.getPunchline(key),
       resultMsg: await ActorSheetHelper.getResultMessage(rollDatas.successCount, key),
       dices: rollDatas.dices,
-      actorImage: this.actor.img,
+      actorImage: this.actor.data.token.img,
       actorName: this.actor.name,
       rollLabel: rollLabel.toUpperCase()
     };

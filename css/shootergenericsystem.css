@@ -4,10 +4,24 @@
   font-family: "Roboto", sans-serif;
 }
 
+/* .window-app .window-content {
+  background:  rgb(65, 58, 58);
+  background-color: rgb(65, 58, 58);
+} */
+
 .rollable:hover, .rollable:focus {
   color: #000;
   text-shadow: 0 0 10px red;
   cursor: pointer;
+}
+
+
+label.bio-title {
+  margin: 7px 0px;
+}
+
+input[type="text"].no-border, textarea.no-border {
+  border: none;
 }
 
 .grid,
@@ -114,11 +128,14 @@
 }
 
 /* Styles limited to shootergenericsystem sheets */
+.app.window-app.shootergenericsystem.sheet.actor>section>form {
+  padding: 20px;
+  background:url(../img/character_sheet_background.png) no-repeat center;
+}
+
 .shootergenericsystem .item-form {
   font-family: "Roboto", sans-serif;
 }
-
-
 
 .shootergenericsystem .sheet-tabs {
   -webkit-box-flex: 0;
@@ -225,6 +242,10 @@
     width: 100%;
     height: 100%;
     margin: 0;
+    /* background-color: #000;
+    color: white;
+    font-weight: bold; */
+    border: none;
   }
 
 /* resources */
@@ -242,6 +263,11 @@
     border: none;
     color: #fff;
     font-weight: bold;
+  }
+
+  .resource-title {
+    font-weight: bold;
+    text-transform: uppercase;
   }
 
 /* NAVIGATION */
