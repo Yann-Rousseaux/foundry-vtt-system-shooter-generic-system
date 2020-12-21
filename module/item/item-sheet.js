@@ -50,9 +50,19 @@ export class shootergenericsystemItemSheet extends ItemSheet {
   activateListeners(html) {
     super.activateListeners(html);
 
-    html.find('.item-selected').change(ev => {
-      alert('cool');
-    });
+    // html.load(ev => {
+    //   alert('cool');
+    // });
+
+    // var selectedItem = html.find('.item-selected');
+
+    // selectedItem.change(ev => {
+    //   alert('cool');
+    // });
+
+    // html.find('.item-selected').change(ev => {
+    //   alert('cool');
+    // });
 
     // html.find('.item-selected').load(ev => {
     //   alert('cool');

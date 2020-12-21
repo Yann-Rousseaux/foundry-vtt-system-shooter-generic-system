@@ -1,6 +1,6 @@
 <form class="{{cssClass}}" autocomplete="off">
     <header class="sheet-header">
-        <!-- <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/> -->
+        <img class="item-img" src="{{item.img}}" data-edit="img" title="{{item.img}}"/>
         <div class="header-fields">
             <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
         </div>
@@ -8,11 +8,6 @@
 
     {{!-- VALUES --}}
     <div class="grid grid-2col">
-        <!-- <div class="resource">
-          <label class="resource-label">Weight</label>
-          <input type="text" name="data.weight" value="{{data.weight}}" data-dtype="Number"/>
-        </div> -->
-
         {{!-- Prix --}}
         <div class="resource">
             <label class="resource-label">Quantity</label>
@@ -33,34 +28,46 @@
 
         {{!-- Aptitudes --}}
         <div class="resource">
-            <label class="resource-label">Aptitudes</label>
-            <select id="spec-parent" class="spec-parent" name="specParents">
-                <option value="fight">Se battre</option>
-                <option value="target">Viser</option>
-            </select>
+            <label class="resource-label">Aptitude associée</label>
+            <div>
+                <select class="spec-parent" name="data.ability" data-dtype="String">
+                    {{#select data.ability}}
+                        <option value="fight">Se battre</option>
+                        <option value="target">Viser</option>
+                    {{/select}}
+                </select>
+            </div>
         </div>
 
         {{!-- Dêgats --}}
         <div class="resource">
             <label class="resource-label">Dêgats</label>
-            <select class="item-selected" name="data.damages" value="{{data.damages}}">
-                <option value="1">[1] Mains nues</option>
-                <option value="2">[2] Trés légére</option>
-                <option value="3">[3] Légéres</option>
-                <option value="4">[4] Moyenne</option>
-                <option value="5">[5] Lourde</option>
-            </select>
+            <div>
+                <select class="item-selected" name="data.damages" data-dtype="Number">
+                {{#select data.damages}}
+                    <option value="1">[1D] Mains nues</option>
+                    <option value="2">[2D] Trés légére</option>
+                    <option value="3">[3D] Légéres</option>
+                    <option value="4">[4D] Moyenne</option>
+                    <option value="5">[5D] Lourde</option>
+                {{/select}}
+                </select>
+            </div>
         </div>
 
         {{!-- Mortalité --}}
         <div class="resource">
             <label class="resource-label">Mortalité (Relance)</label>
-            <select id="damages" class="damages" name="damages">
-                <option value="0">[0] Normale</option>
-                <option value="1">[1] Efficace</option>
-                <option value="2">[2] Dangereuse</option>
-                <option value="3">[3] Meurtrière</option>
-            </select>
+            <div>
+                <select class="damages" name="data.lethality" data-dtype="Number">
+                {{#select data.lethality}}
+                    <option value="0">[0D] Normale</option>
+                    <option value="1">[1D] Efficace</option>
+                    <option value="2">[2D] Dangereuse</option>
+                    <option value="3">[3D] Meurtrière</option>
+                {{/select}}
+                </select>
+            </div>
         </div>
 
     </div>
