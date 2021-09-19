@@ -14,9 +14,7 @@ export const preloadHandlebarsTemplates = async function() {
     "systems/shootergenericsystem/templates/actor/actor-outlaw.html",
     "systems/shootergenericsystem/templates/actor/actor-marshal.html",
     "systems/shootergenericsystem/templates/actor/actor-items.html",
-    "systems/shootergenericsystem/templates/actor/actor-specialisations.html",
-    "systems/shootergenericsystem/templates/actor/actor-specialisations-attributes.html",
-    "systems/shootergenericsystem/templates/actor/actor-specialisations-groups.html"
+    "systems/shootergenericsystem/templates/actor/actor-specialisations.html"
   ];
 
   // Load the template parts

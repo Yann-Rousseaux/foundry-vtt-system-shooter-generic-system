@@ -1,5 +1,5 @@
 <div class="abilities grid grid-2col">
-  {{#each data.abilities as |ability key|}}
+  {{#each data.data.abilities as |ability key|}}
     <div class="ability">
         <div for="data.abilities.{{key}}.value" class="ability-label">{{ability.label}}{{ability.show}}</div>
         <div>

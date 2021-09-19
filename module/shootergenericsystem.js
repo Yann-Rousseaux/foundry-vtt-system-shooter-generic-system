@@ -18,8 +18,8 @@ Hooks.once('init', async function() {
   CONFIG.GLOBALS = GLOBALS;
 
   // Define custom Entity classes
-  CONFIG.Actor.entityClass = shootergenericsystemActor;
-  CONFIG.Item.entityClass = shootergenericsystemItem;
+  CONFIG.Actor.documentClass = shootergenericsystemActor;
+  CONFIG.Item.documentClass = shootergenericsystemItem;
 
   game.shootergenericsystem = {
     shootergenericsystemActor,

@@ -71,7 +71,7 @@ export class ActorSheetHelper {
 
             anActor.data.data.specialisations[key] = newSpeciality;
 
-            anActor.update(anActor.data);
+            anActor.update(anActor.data.data);
           },
         },
       },

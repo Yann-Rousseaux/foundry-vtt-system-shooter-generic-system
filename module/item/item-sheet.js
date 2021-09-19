@@ -50,27 +50,7 @@ export class shootergenericsystemItemSheet extends ItemSheet {
   activateListeners(html) {
     super.activateListeners(html);
 
-    // html.load(ev => {
-    //   alert('cool');
-    // });
-
-    // var selectedItem = html.find('.item-selected');
-
-    // selectedItem.change(ev => {
-    //   alert('cool');
-    // });
-
-    // html.find('.item-selected').change(ev => {
-    //   alert('cool');
-    // });
-
-    // html.find('.item-selected').load(ev => {
-    //   alert('cool');
-    // });
-
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
-
-    // Roll handlers, click handlers, etc. would go here.
   }
 }
