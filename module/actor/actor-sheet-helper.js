@@ -67,11 +67,14 @@ export class ActorSheetHelper {
               parentValue: anActor.data.data.abilities[html.find("#spec-parent")[0].value].value
             };
 
-            let key = ActorSheetHelper.stringToKey(newSpeciality.label);
+            //let key = ActorSheetHelper.stringToKey(newSpeciality.label);
 
-            anActor.data.data.specialisations[key] = newSpeciality;
+            let datas = anActor.data.data;
+            datas.specialisations.push(newSpeciality);
+            //specialisations.push(newSpeciality);
 
-            anActor.update(anActor.data.data);
+            //anActor.update(anActor.data.data);
+            anActor.update({"data.specialisations":datas.specialisations});
           },
         },
       },
