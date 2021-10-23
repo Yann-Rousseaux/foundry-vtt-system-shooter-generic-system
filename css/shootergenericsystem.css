@@ -15,6 +15,13 @@
   cursor: pointer;
 }
 
+div.app.window-app.shootergenericsystem.sheet.actor>section.window-content {
+  background: transparent !important;
+  padding: 20px !important;
+  font-family: "Roboto", sans-serif !important;
+  margin: 0px !important;
+  background: url(../img/character_sheet_background.jpg) repeat center !important;
+}
 
 label.bio-title {
   margin: 7px 0px;
@@ -129,8 +136,8 @@ input[type="text"].no-border, textarea.no-border {
 
 /* Styles limited to shootergenericsystem sheets */
 .app.window-app.shootergenericsystem.sheet.actor>section>form {
-  padding: 20px;
-  background:url(../img/character_sheet_background.png) no-repeat center;
+  /* padding: 20px; */
+  /*background:url(../img/character_sheet_background.jpg) no-repeat center;*/
 }
 
 .shootergenericsystem .item-form {
