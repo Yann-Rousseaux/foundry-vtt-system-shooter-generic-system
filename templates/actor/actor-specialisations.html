@@ -5,14 +5,14 @@
             <th>{{localize 'SGS.speciality.value'}}</th>
             <th>{{localize 'SGS.speciality.parent'}}</th>
             <th>{{localize 'SGS.throw'}}</th>
-            <th><a class="spec-add-or-remove" data-action="add"><i class="fas fa-plus"></i></a></th>
+            <th><a class="spec-action" data-action="add"><i class="fas fa-plus"></i></a></th>
         </tr>
     </thead>
     <tbody>
         {{#each data.data.specialisations as | specialisation key|}}
         {{#if specialisation}}
         <tr class="spec">
-            <td>{{specialisation.label}}</td>
+            <td><a class="spec-action" data-action="show">{{specialisation.label}}</a></td>
             <td>{{specialisation.value}}</td>
             <td>@abilities.act.label</td>
             <td class="d-flex-item">
@@ -28,7 +28,7 @@
                 </a>
             </td>
             <td>
-                <a class="spec-add-or-remove" data-action="remove" data-key="{{key}}">
+                <a class="spec-action" data-action="remove" data-key="{{key}}">
                     <i class="fas fa-trash"></i>
                 </a>
             </td>

@@ -1,5 +1,5 @@
 export class ActorSheetHelper {
-  /* ************** *
+/* ************** *
  *  SPECIALITIES  *
  * ************** *
 
@@ -15,6 +15,10 @@ export class ActorSheetHelper {
 
     // Perform create and delete actions.
     switch (action) {
+      case "show":
+        alert('cool');
+        //ActorSheetHelper.openSpecialisationDialog(event, this.actor);
+        break;
       case "add":
         ActorSheetHelper.openNewSpecialisationDialog(event, this.actor);
         break;
@@ -71,9 +75,6 @@ export class ActorSheetHelper {
 
             let datas = anActor.data.data;
             datas.specialisations.push(newSpeciality);
-            //specialisations.push(newSpeciality);
-
-            //anActor.update(anActor.data.data);
             anActor.update({"data.specialisations":datas.specialisations});
           },
         },
@@ -145,8 +146,9 @@ export class ActorSheetHelper {
   static async deleteSpecialisation(event, app) {
     let key = event.currentTarget.dataset.key;
     let anActor = app.actor;
-    anActor.data.data.specialisations[key] = null;
-    anActor.update(anActor.data);
+    let datas = anActor.data.data;
+    datas.specialisations[key] = null;
+    anActor.update({"data.specialisations":datas.specialisations});
   }
 
   /**

@@ -49,9 +49,7 @@ export class shootergenericsystemActorSheet extends ActorSheet {
 
     /* SPECIALISATIONS */
       // ADD or REMOVE specialisation.
-      html
-        .find(".specialisations")
-        .on("click", ".spec-add-or-remove", ActorSheetHelper.onClickSpecialisationControl.bind(this));
+      html.find('.spec-action').click(ActorSheetHelper.onClickSpecialisationControl.bind(this));
 
     /* ITEMS */
 
