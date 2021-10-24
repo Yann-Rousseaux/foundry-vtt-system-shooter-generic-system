@@ -58,6 +58,13 @@ export class shootergenericsystemActorSheet extends ActorSheet {
       // Add Inventory Item
       html.find('.item-create').click(this._onItemCreate.bind(this));
 
+      // Show Inventory Item
+      html.find('.item-show').click(ev => {
+        const li = $(ev.currentTarget).parents(".item");
+        const item = this.actor.getOwnedItem(li.data("itemId"));
+        item.sheet.render(true);
+      });
+
       // Update Inventory Item
       html.find('.item-edit').click(ev => {
         const li = $(ev.currentTarget).parents(".item");
@@ -102,7 +109,8 @@ export class shootergenericsystemActorSheet extends ActorSheet {
     delete itemData.data["type"];
 
     // Finally, create the item!
-    return this.actor.createOwnedItem(itemData);
+    //return this.actor.createOwnedItem(itemData);
+    return this.actor.createEmbeddedDocuments(itemData);
   }
 
   /**
