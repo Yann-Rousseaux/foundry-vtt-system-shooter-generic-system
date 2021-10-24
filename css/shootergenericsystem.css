@@ -15,6 +15,7 @@
   cursor: pointer;
 }
 
+/* Surcharge les styles globaux de Foundry VTT FoundryVTT\resources\app\public\css\style.css (et non pas du système) */
 div.app.window-app.shootergenericsystem.sheet.actor>section.window-content {
   background: transparent !important;
   padding: 20px !important;
