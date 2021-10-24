@@ -2,32 +2,42 @@
   "name": "shootergenericsystem",
   "title": "Shooter Generic System",
   "description": "The Shooter Generic System system for FoundryVTT!",
-  "version": "1.1.7",
+  "author": "Ian Wheelbuckets",
+  "authors": [],
+  "url": "https://github.com/Yann-Rousseaux/foundry-vtt-system-shooter-generic-system",
+  "license": "LICENSE.txt",
+  "flags": {},
+  "version": "2.0.0",
   "minimumCoreVersion": "0.6.6",
   "compatibleCoreVersion": "0.8.9",
-  "templateVersion": 2,
-  "author": "Ian Wheelbuckets",
-  "esmodules": ["module/shootergenericsystem.js"],
-  "styles": ["css/shootergenericsystem.css"],
   "scripts": [],
-  "packs": [],
+  "esmodules": [
+    "module/shootergenericsystem.js"
+  ],
+  "styles": [
+    "css/shootergenericsystem.css"
+  ],
   "languages": [
     {
       "lang": "en",
       "name": "English",
       "path": "lang/en.json"
-    },{
+    },
+    {
       "lang": "fr",
       "name": "French",
       "path": "lang/fr.json"
     }
   ],
+  "packs": [],
+  "system": [],
+  "dependencies": [],
+  "socket": false,
+  "manifest": "https://raw.githubusercontent.com/Yann-Rousseaux/foundry-vtt-system-shooter-generic-system/master/system.json",
+  "download": "https://github.com/Yann-Rousseaux/foundry-vtt-system-shooter-generic-system/raw/master/archives/foundry-vtt-system-shooter-generic-system.zip",
+  "protected": false,
   "gridDistance": 5,
   "gridUnits": "m",
   "primaryTokenAttribute": "health",
-  "secondaryTokenAttribute": "resources",
-  "url": "https://github.com/Yann-Rousseaux/foundry-vtt-system-shooter-generic-system",
-  "manifest": "https://raw.githubusercontent.com/Yann-Rousseaux/foundry-vtt-system-shooter-generic-system/master/system.json",
-  "download": "https://github.com/Yann-Rousseaux/foundry-vtt-system-shooter-generic-system/raw/master/archives/foundry-vtt-system-shooter-generic-system.zip",
-  "license": "LICENSE.txt"
+  "secondaryTokenAttribute": "resources"
 }
