@@ -12,16 +12,16 @@
         {{#each data.data.specialisations as | specialisation key|}}
         {{#if specialisation}}
         <tr class="spec">
-            <td><a class="spec-action" data-action="show">{{specialisation.label}}</a></td>
+            <td>{{specialisation.label}}</td>
             <td>{{specialisation.value}}</td>
-            <td>@abilities.act.label</td>
+            <td>{{specialisation.parentName}}</td>
             <td class="d-flex-item">
                 <a  class="roll-spec"
                     data-spec_value="{{specialisation.value}}" 
                     data-spec_label="{{specialisation.label}}"
-                    data-spec_key="{{key}}" 
-                    data-ability_value="{{specialisation.parentValue}}" 
-                    data-ability_label="{{specialisation.parent}}"
+                    data-spec_key="{{key}}"
+                    data-ability_key="{{specialisation.parent}}"
+                    data-ability_label="{{specialisation.parentName}}"
                     data-type="specialisation"
                 >
                     <img src="systems/shootergenericsystem/icons/d6_2_black.png" alt="roll">

@@ -68,10 +68,9 @@ export class ActorSheetHelper {
               label: html.find("#spec-label")[0].value,
               value: html.find("#spec-value")[0].value,
               parent: html.find("#spec-parent")[0].value,
-              parentValue: anActor.data.data.abilities[html.find("#spec-parent")[0].value].value
+              parentValue: anActor.data.data.abilities[html.find("#spec-parent")[0].value].value,
+              parentName: anActor.data.data.abilities[html.find("#spec-parent")[0].value].label
             };
-
-            //let key = ActorSheetHelper.stringToKey(newSpeciality.label);
 
             let datas = anActor.data.data;
             datas.specialisations.push(newSpeciality);
@@ -180,24 +179,19 @@ export class ActorSheetHelper {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
+    let key = dataset.ability_key;
+    let abilityValue = this.actor.data.data.abilities[key].value;
+    let rollLabel = this.actor.data.data.abilities[key].label;
 
-    let abilityValue = parseInt(dataset.ability_value, 10);
-    let abilityLabel = dataset.ability_label;
-    let abilityKey  = dataset.ability_key;
-    let rollLabel = abilityLabel;
-    let key = abilityKey;
-    
     let rollFormula = await ActorSheetHelper.composeFormula(abilityValue);
     let rollDatas = await ActorSheetHelper.getRollDatas(abilityValue, rollFormula, this.actor, false);
-    let rerollDatas = {};
 
     if(rollDatas.failureCount > 0 && dataset.type == 'specialisation') {
-      let specValue = parseInt(dataset.spec_value, 10);
-      rollLabel = dataset.spec_label;
-      key = dataset.spec_key;
-      specValue = specValue < rollDatas.failureCount ? specValue : rollDatas.failureCount;
-      let rerollFormula = await ActorSheetHelper.composeFormula(specValue);
-      rerollDatas = await ActorSheetHelper.getRollDatas(specValue, rerollFormula, this.actor, true);
+      let specValue = dataset.spec_value;
+      rollLabel = rollLabel.concat(': ').concat(dataset.spec_label);
+      let numberOfReroll = specValue < rollDatas.failureCount ? specValue : rollDatas.failureCount;
+      let rerollFormula = await ActorSheetHelper.composeFormula(numberOfReroll);
+      let rerollDatas = await ActorSheetHelper.getRollDatas(specValue, rerollFormula, this.actor, true);
 
       rollDatas.successCount = rollDatas.successCount + rerollDatas.successCount;
 
@@ -215,7 +209,7 @@ export class ActorSheetHelper {
       dices: rollDatas.dices,
       actorImage: this.actor.data.token.img,
       actorName: this.actor.name,
-      rollLabel: rollLabel.toUpperCase()
+      rollLabel: rollLabel
     };
 
     let html = await renderTemplate(

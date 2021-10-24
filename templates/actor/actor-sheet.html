@@ -16,7 +16,7 @@
         {{!-- ABILITIES AND SPECIALISATIONS TAB --}}
         <div class="tab abilities" data-group="primary" data-tab="abilities">
           {{> "systems/shootergenericsystem/templates/actor/actor-abilities.html" attributes=data.abilities dtypes=dtypes}}
-          {{> "systems/shootergenericsystem/templates/actor/actor-specialisations.html"}}
+          {{> "systems/shootergenericsystem/templates/actor/actor-specialisations.html" attributes=data.abilities dtypes=dtypes}}
         </div>
 
         {{!-- OUTLAW Tab --}}
