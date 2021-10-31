@@ -281,7 +281,7 @@ export class ActorSheetHelper {
   static async getResultMessage(result, key) {
     let resultMsg = "";
 
-    if (result == 0 && (!key || key === '')) {
+    if (result === 0) {
       resultMsg = `${CONFIG.GLOBALS.messages.failure} !`;
     } else if (result >= 1) {
       resultMsg = `${result} ${CONFIG.GLOBALS.messages.success} !`;

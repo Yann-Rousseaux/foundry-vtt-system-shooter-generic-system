@@ -385,7 +385,7 @@ input[type="text"].input-ability {
 }
 
 .d-roll-result-details {
-  height: 60px;
+  height: 40px;
   align-items: center;
   /*background:url(../img/chat_center.png) repeat center;*/
 }
