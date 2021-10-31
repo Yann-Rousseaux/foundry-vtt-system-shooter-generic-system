@@ -4,16 +4,16 @@
         <div class="item-image"></div>
         <div class="item-name">Name</div>
         <div class="item-controls">
-        <a class="item-control item-create" title="Create item" data-type="item"><i class="fas fa-plus"></i> Add item</a>
+        <a class="item-control item-create" title="Create item" data-type="item" data-action="create"><i class="fas fa-plus"></i> Add item</a>
         </div>
     </li>
 {{#each data.items as |item id|}}
-    <li class="item flexrow" data-item-id="{{item._id}}">
+    <li class="item flexrow">
         <div class="item-image"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></div>
-        <h4 class="item-name"><a class="item-control item-show" title="Show Item">{{item.name}}</a></h4>
+        <h4 class="item-name"><a class="item-control" data-action="show" data-item-id="{{item._id}}" title="Show Item">{{item.name}}</a></h4>
         <div class="item-controls">
-            <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-            <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+            <a class="item-control" data-action="edit"data-item-id="{{item._id}}" title="Edit Item" ><i class="fas fa-edit"></i></a>
+            <a class="item-control" data-action="delete" data-item-id="{{item._id}}" title="Delete Item"><i class="fas fa-trash"></i></a>
         </div>
     </li>
 {{/each}}

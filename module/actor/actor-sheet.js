@@ -52,8 +52,8 @@ export class shootergenericsystemActorSheet extends ActorSheet {
       html.find('.spec-action').click(ActorSheetHelper.onClickSpecialisationControl.bind(this));
 
     /* ITEMS */
-
-      // Add Inventory Item
+      html.find('.item-control').click(ActorSheetHelper.onClickItemControl.bind(this));
+/*       // Add Inventory Item
       html.find('.item-create').click(this._onItemCreate.bind(this));
 
       // Show Inventory Item
@@ -75,7 +75,7 @@ export class shootergenericsystemActorSheet extends ActorSheet {
         const li = $(ev.currentTarget).parents(".item");
         this.actor.deleteOwnedItem(li.data("itemId"));
         li.slideUp(200, () => this.render(false));
-      });
+      }); */
 
       html.find('.roll-ability').click(ActorSheetHelper.onRoll.bind(this));
       html.find('.roll-spec').click(ActorSheetHelper.onRoll.bind(this));
@@ -83,33 +83,7 @@ export class shootergenericsystemActorSheet extends ActorSheet {
 
   /* -------------------------------------------- */
 
-  /**
-   * Handle creating a new Owned Item for the actor using initial data defined in the HTML dataset
-   * @param {Event} event   The originating click event
-   * @private
-   */
-  _onItemCreate(event) {
-    event.preventDefault();
-    const header = event.currentTarget;
-    // Get the type of item to create.
-    const type = header.dataset.type;
-    // Grab any data associated with this control.
-    const data = duplicate(header.dataset);
-    // Initialize a default name.
-    const name = `New ${type.capitalize()}`;
-    // Prepare the item object.
-    const itemData = {
-      name: name,
-      type: type,
-      data: data
-    };
-    // Remove the type from the dataset since it's in the itemData.type prop.
-    delete itemData.data["type"];
 
-    // Finally, create the item!
-    //return this.actor.createOwnedItem(itemData);
-    return this.actor.createEmbeddedDocuments(itemData);
-  }
 
   /**
    * Handle clickable rolls.

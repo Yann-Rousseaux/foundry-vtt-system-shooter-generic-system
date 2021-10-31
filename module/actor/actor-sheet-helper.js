@@ -271,7 +271,7 @@ export class ActorSheetHelper {
   }
 
   /**
-   * 
+   * Obtenir le message de resultat
    * @param {*} result 
    * @param {*} key 
    */
@@ -285,5 +285,31 @@ export class ActorSheetHelper {
     }
 
     return resultMsg;
+  }
+
+  /**
+   * Handle creating a new Owned Item for the actor using initial data defined in the HTML dataset
+   * @param {Event} event   The originating click event
+   * @private
+   */
+  static async onClickItemControl(event) {
+    event.preventDefault();
+    const dataset = event.currentTarget.dataset;
+    let item = null;
+
+    switch ( dataset.action ) {
+      case "create":
+        let cls = getDocumentClass("Item");
+        return cls.create({name: game.i18n.localize("SIMPLE.ItemNew"), type: "item"}, {parent: this.actor});
+      case "show":
+      case "edit":
+        item = this.actor.items.get(dataset.itemId);
+        return item.sheet.render(true);
+      case "delete":
+        item = this.actor.items.get(dataset.itemId);
+        return item.delete();
+      default :
+        return;
+    }
   }
 }

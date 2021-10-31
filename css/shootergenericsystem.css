@@ -4,11 +4,6 @@
   font-family: "Roboto", sans-serif;
 }
 
-/* .window-app .window-content {
-  background:  rgb(65, 58, 58);
-  background-color: rgb(65, 58, 58);
-} */
-
 .rollable:hover, .rollable:focus {
   color: #000;
   text-shadow: 0 0 10px red;
@@ -135,12 +130,6 @@ input[type="text"].no-border, textarea.no-border {
   justify-content: space-between;
 }
 
-/* Styles limited to shootergenericsystem sheets */
-.app.window-app.shootergenericsystem.sheet.actor>section>form {
-  /* padding: 20px; */
-  /*background:url(../img/character_sheet_background.jpg) no-repeat center;*/
-}
-
 .shootergenericsystem .item-form {
   font-family: "Roboto", sans-serif;
 }
@@ -200,7 +189,6 @@ input[type="text"].no-border, textarea.no-border {
 }
 
 /* HEADER */
-
   .shootergenericsystem .sheet-header {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 150px;
@@ -223,8 +211,8 @@ input[type="text"].no-border, textarea.no-border {
 
   .shootergenericsystem .sheet-header .profile-img {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 100px;
-    flex: 0 0 100px;
+    -ms-flex: 0 0 150px;
+    flex: 0 0 150px;
     height: 100%;
     margin-right: 10px;
   }
@@ -259,9 +247,6 @@ input[type="text"].no-border, textarea.no-border {
     width: 100%;
     height: 100%;
     margin: 0;
-    /* background-color: #000;
-    color: white;
-    font-weight: bold; */
     border: none;
   }
 
