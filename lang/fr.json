@@ -3,6 +3,9 @@
 
     "SGS.throw": "Lancer",
 
+    "SGS.items.addItem" : "Ajouter",
+    "SGS.items.name" : "Nom de l'objet",
+
     "SGS.tab.abilities" : "APTITUDES",
     "SGS.tab.marshal" : "MARSHAL",
     "SGS.tab.outlaw" : "HORS-LA-LOI",

@@ -2,6 +2,9 @@
     "ABILITY.act": "Act",
 
     "SGS.throw": "Throw",
+
+    "SGS.items.addItem" : "Add Item",
+    "SGS.items.name" : "Item Name",
     
     "SGS.specialities.addGroup" : "Add Attribute Group",
 
