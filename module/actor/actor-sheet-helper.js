@@ -186,20 +186,23 @@ export class ActorSheetHelper {
     let rollFormula = await ActorSheetHelper.composeFormula(abilityValue);
     let rollDatas = await ActorSheetHelper.getRollDatas(abilityValue, rollFormula, this.actor, false);
 
-    if(rollDatas.failureCount > 0 && dataset.type == 'specialisation') {
-      let specValue = dataset.spec_value;
+    if(dataset.type == 'specialisation') {
       rollLabel = rollLabel.concat(': ').concat(dataset.spec_label);
-      let numberOfReroll = specValue < rollDatas.failureCount ? specValue : rollDatas.failureCount;
-      let rerollFormula = await ActorSheetHelper.composeFormula(numberOfReroll);
-      let rerollDatas = await ActorSheetHelper.getRollDatas(specValue, rerollFormula, this.actor, true);
 
-      rollDatas.successCount = rollDatas.successCount + rerollDatas.successCount;
-
-      rollDatas.dices.forEach((d, index) => {
-        if(!d.success && rerollDatas.dices.length > 0) {
-          d.reroll = rerollDatas.dices.pop();
-        }
-      });
+      if(rollDatas.failureCount > 0) {
+        let specValue = dataset.spec_value;
+        let numberOfReroll = specValue < rollDatas.failureCount ? specValue : rollDatas.failureCount;
+        let rerollFormula = await ActorSheetHelper.composeFormula(numberOfReroll);
+        let rerollDatas = await ActorSheetHelper.getRollDatas(specValue, rerollFormula, this.actor, true);
+  
+        rollDatas.successCount = rollDatas.successCount + rerollDatas.successCount;
+  
+        rollDatas.dices.forEach((d, index) => {
+          if(!d.success && rerollDatas.dices.length > 0) {
+            d.reroll = rerollDatas.dices.pop();
+          }
+        }); 
+      }
     }
 
     // TODO Eventuellement remplacer rollDatas.successCount
@@ -208,8 +211,8 @@ export class ActorSheetHelper {
       resultMsg: await ActorSheetHelper.getResultMessage(rollDatas.successCount, key),
       dices: rollDatas.dices,
       actorImage: this.actor.data.token.img,
-      actorName: this.actor.name,
-      rollLabel: rollLabel
+      actorName: this.actor.name.toUpperCase(),
+      rollLabel: rollLabel.toUpperCase()
     };
 
     let html = await renderTemplate(

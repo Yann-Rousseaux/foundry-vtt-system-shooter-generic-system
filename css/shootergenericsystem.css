@@ -284,7 +284,6 @@ input[type="text"].no-border, textarea.no-border {
 
 .shootergenericsystem .tabs {
   height: 40px;
-  /* border-bottom: 1px solid #AAA; */
 }
 
 .shootergenericsystem .tabs .item {
@@ -295,7 +294,6 @@ input[type="text"].no-border, textarea.no-border {
 }
 
 .shootergenericsystem .tabs .item.active {
-  /* text-decoration: underline; */
   text-shadow: none;
   color: white;
   background-color: #000;
@@ -342,13 +340,16 @@ input[type="text"].input-ability {
   align-items: center;
 }
 
-/* STYLE DE CHAT */
+/* ************* *
+ * STYLE DE CHAT *
+ * ************* */
 .d-roll-text {
   color: rgb(0, 0, 0);
+  /* background:url(../img/chat_background.jpg) repeat center;*/
 }
 
 .d-roll-title {
-  background:url(../img/chat_top.png) no-repeat center;
+  /*background:url(../img/chat_top.png) no-repeat center;*/
   height: 40px;
   text-align: center;
   font-weight: bold;
@@ -356,7 +357,14 @@ input[type="text"].input-ability {
 }
 
 .d-roll-content {
-  background:url(../img/chat_center.png) repeat center;
+  /*background:url(../img/chat_center.png) repeat center;*/
+}
+
+.d-roll-punchline {
+  /*background:url(../img/chat_center.png) repeat center;*/
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
 }
 
 .d-roll-actor-img {
@@ -367,8 +375,8 @@ input[type="text"].input-ability {
 .d-roll-annoucement {
   border-top: 1px solid #6a522c;
   border-bottom: 1px solid #6a522c;
-  height: 60px;
   align-items: center;
+  padding: 5px 0px;
 }
 
 .d-roll-result {
@@ -377,20 +385,20 @@ input[type="text"].input-ability {
 }
 
 .d-roll-result-details {
-  height: 30px;
+  height: 60px;
   align-items: center;
-  background:url(../img/chat_center.png) repeat center;
+  /*background:url(../img/chat_center.png) repeat center;*/
 }
 
 .d-roll-result-message {
-  height: 30px;
+  height: 25px;
   align-items: center;
-  background:url(../img/chat_bottom.png) no-repeat center;
+  /*background:url(../img/chat_bottom.png) no-repeat center;*/
 }
 
 .d-shape-d6 {
-  width: 20px;
-  height: 20px;
+  width: 17px;
+  height: 17px;
   margin: 3px;
   color: white;
   font-weight: bold;
@@ -436,38 +444,24 @@ input[type="text"].input-ability {
 }
 
 .d-arrow {
-  color: white;
+  color: rgb(48, 48, 48);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
 }
 
 .d-roll-inline {
   display: inline-block;
 }
 
-/* ONGLET SPECIALITES */
-/* .spec-add {
-  background: #c4ab21;
-} */
-
 .specialisations-header {
-  /* position: sticky;
-  top: 0;
-  left: 0;
-  align-items: center;
-  padding: 0 5px;
-  margin: 5px 0; */
   background: #000000;
   border: none;
   text-shadow: none;
-  /* border: 1px solid #AAA;
-  border-radius: 2px;
-  text-align: left;
-  font-weight: bold; */
 }
 
 table thead {
   background: rgba(0, 0, 0, 0.5);
   color: #f0f0e0;
-  /* text-shadow: 1px 1px #000; */
   border-bottom: 1px solid #000;
 }
 
