@@ -6,7 +6,9 @@
     {{!-- Sheet Tab Navigation --}}
       <nav class="sheet-tabs tabs" data-group="primary">
           <a class="item" data-tab="abilities">{{localize 'SGS.tab.abilities'}}</a>
-          <a class="item" data-tab="outlaw">{{localize 'SGS.tab.outlaw'}}</a>
+          {{#if (ndc data.world_option)}}
+            <a class="item" data-tab="outlaw">{{localize 'SGS.tab.outlaw'}}</a>
+          {{/if}}
           <a class="item" data-tab="texasmarshal">{{localize 'SGS.tab.marshal'}}</a>
           <a class="item" data-tab="items">{{localize 'SGS.tab.items'}}</a>
       </nav>
@@ -19,10 +21,13 @@
           {{> "systems/shootergenericsystem/templates/actor/actor-specialisations.html" attributes=data.abilities dtypes=dtypes}}
         </div>
 
+
         {{!-- OUTLAW Tab --}}
-        <div class="tab outlaw" data-group="primary" data-tab="outlaw">
-          {{> "systems/shootergenericsystem/templates/actor/actor-outlaw.html"}}
-        </div>
+        {{#if (ndc data.world_option)}}
+          <div class="tab outlaw" data-group="primary" data-tab="outlaw">
+            {{> "systems/shootergenericsystem/templates/actor/actor-outlaw.html"}}
+          </div>
+        {{/if}}
 
         {{!-- TEXAS MARSHAL Tab --}}
         <div class="tab texasmarshal" data-group="primary" data-tab="texasmarshal">

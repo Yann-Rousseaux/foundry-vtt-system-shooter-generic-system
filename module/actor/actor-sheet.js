@@ -9,8 +9,7 @@ export class shootergenericsystemActorSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     // let sideBarWidth = 300;
-    // let sheetHeight = window.innerHeight;
-    let sheetHeight = 800;
+    let sheetHeight = window.innerHeight;
     let sheetWidth = 550;
     let sheetLeftPostion = 0;
     let sheetTopPostion = 0;
@@ -32,9 +31,9 @@ export class shootergenericsystemActorSheet extends ActorSheet {
   getData() {
     const data = super.getData();
     data.dtypes = ["String", "Number", "Boolean"];
-    // for (let attr of Object.values(data.data.attributes)) {
-    //   attr.isCheckbox = attr.dtype === "Boolean";
-    // }
+    /* Récupération du jeu pour afficher les bon onglets */
+    let selectedGame = game.settings.get('gameSelectorModule', 'gameChoices');
+    data.data.world_option = selectedGame;
     return data;
   }
 
