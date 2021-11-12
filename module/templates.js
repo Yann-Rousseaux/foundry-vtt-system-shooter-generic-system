@@ -12,7 +12,7 @@ export const preloadHandlebarsTemplates = async function() {
     "systems/shootergenericsystem/templates/actor/actor-abilities.html",
     "systems/shootergenericsystem/templates/actor/actor-specialisations.html",
     "systems/shootergenericsystem/templates/actor/actor-outlaw.html",
-    "systems/shootergenericsystem/templates/actor/actor-marshal.html",
+    "systems/shootergenericsystem/templates/actor/actor-background.html",
     "systems/shootergenericsystem/templates/actor/actor-items.html",
     "systems/shootergenericsystem/templates/actor/actor-specialisations.html"
   ];

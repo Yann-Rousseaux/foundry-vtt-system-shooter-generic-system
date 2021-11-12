@@ -1,0 +1,24 @@
+<div class="d-flex-col">
+    <label class="bio-title" for="data.data.background.texasMarshalPersona.firstname" class="resource-label">{{localize 'SGS.marshal.firstname'}}</label>
+    <input class="no-border" type="text" name="data.background.texasMarshalPersona.firstname" value="{{data.data.background.texasMarshalPersona.firstname}}" data-dtype="String"/>
+</div>
+<div class="d-flex-col">
+    <label class="bio-title" for="data.data.background.texasMarshalPersona.lastname" class="resource-label">{{localize 'SGS.marshal.lastname'}}</label>
+    <input class="no-border" type="text" name="data.background.texasMarshalPersona.lastname" value="{{data.data.background.texasMarshalPersona.lastname}}" data-dtype="String"/>
+</div>
+{{#unless (ndc data.world_option)}}
+    <div class="d-flex-col">
+        <label class="bio-title" for="data.data.background.texasMarshalPersona.profile" class="resource-label">{{localize 'SGS.marshal.profile'}}</label>
+        <input class="no-border" type="text" name="data.background.texasMarshalPersona.profile" value="{{data.data.background.texasMarshalPersona.profile}}" data-dtype="String"/>
+    </div>
+{{/unless}}
+<div class="d-flex-col">
+    <label class="bio-title" for="data.background.texasMarshalPersona.keywords" class="resource-label">{{localize 'SGS.marshal.keywords'}}</label>
+    <textarea class="no-border" name="data.background.texasMarshalPersona.keywords" rows="5" cols="30">{{data.data.background.texasMarshalPersona.keywords}}</textarea>
+</div>
+{{#unless (ndc data.world_option)}}
+    <div class="d-flex-col">
+        <label class="bio-title" for="data.background.texasMarshalPersona.occupationalhazard" class="resource-label">{{localize 'SGS.marshal.occupational_hazard'}}</label>
+        <textarea class="no-border" name="data.background.texasMarshalPersona.occupationalhazard" rows="5" cols="30">{{data.data.background.texasMarshalPersona.occupationalhazard}}</textarea>
+    </div>
+{{/unless}}

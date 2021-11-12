@@ -9,7 +9,13 @@
           {{#if (ndc data.world_option)}}
             <a class="item" data-tab="outlaw">{{localize 'SGS.tab.outlaw'}}</a>
           {{/if}}
-          <a class="item" data-tab="texasmarshal">{{localize 'SGS.tab.marshal'}}</a>
+          <a class="item" data-tab="texasmarshal">
+            {{#if (ndc data.world_option)}}
+              {{localize 'SGS.tab.marshal'}}
+            {{else}}
+             {{localize 'SGS.tab.informations'}}
+            {{/if}}
+          </a>
           <a class="item" data-tab="items">{{localize 'SGS.tab.items'}}</a>
       </nav>
 
@@ -31,7 +37,7 @@
 
         {{!-- TEXAS MARSHAL Tab --}}
         <div class="tab texasmarshal" data-group="primary" data-tab="texasmarshal">
-          {{> "systems/shootergenericsystem/templates/actor/actor-marshal.html"}}
+          {{> "systems/shootergenericsystem/templates/actor/actor-background.html"}}
         </div>
 
         {{!-- ITEMS Tab --}}

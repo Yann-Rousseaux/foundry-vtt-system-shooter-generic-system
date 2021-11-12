@@ -13,13 +13,16 @@
     "SGS.speciality.parent" : "Parent ability",
 
     "SGS.tab.abilities" : "ABILITIES",
-    "SGS.tab.marshal" : "MARSHAL",
-    "SGS.tab.outlaw" : "OUTLAW",
+    "SGS.tab.marshal" : "THE MARSHAL",
+    "SGS.tab.informations" : "INFORMATIONS",
+    "SGS.tab.outlaw" : "THE OUTLAW",
     "SGS.tab.items" : "ITEMS",
 
     "SGS.marshal.firstname" : "Firstname",
     "SGS.marshal.lastname" : "Lastname",
+    "SGS.marshal.profile" : "profile",
     "SGS.marshal.keywords" : "Keywords",
+    "SGS.marshal.occupational_hazard" : "Occupational Hazard",
 
     "SGS.outlaw.biography" : "Biography",
     "SGS.outlaw.motivation" : "Motivation",

@@ -7,13 +7,16 @@
     "SGS.items.name" : "Nom de l'objet",
 
     "SGS.tab.abilities" : "APTITUDES",
-    "SGS.tab.marshal" : "MARSHAL",
-    "SGS.tab.outlaw" : "HORS-LA-LOI",
+    "SGS.tab.marshal" : "LE MARSHAL",
+    "SGS.tab.informations" : "INFORMATIONS",
+    "SGS.tab.outlaw" : "LE HORS-LA-LOI",
     "SGS.tab.items" : "EQUIPEMENT",
 
     "SGS.marshal.firstname" : "Prénom",
     "SGS.marshal.lastname" : "Nom",
+    "SGS.marshal.profile" : "profil",
     "SGS.marshal.keywords" : "Mots-Clés",
+    "SGS.marshal.occupational_hazard" : "Déformation(s) professionelle(s)",
 
     "SGS.outlaw.biography" : "Biographie",
     "SGS.outlaw.motivation" : "Motivation",
