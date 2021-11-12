@@ -96,7 +96,9 @@
         "texasMarshalPersona": {
           "firstname": "",
           "lastname": "",
-          "keywords": ""
+          "profile": "",
+          "keywords": "",
+          "occupationalHazard": ""
         }
       },
       "experience": {

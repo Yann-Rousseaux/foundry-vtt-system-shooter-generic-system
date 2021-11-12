@@ -16,7 +16,7 @@
     "SGS.marshal.lastname" : "Nom",
     "SGS.marshal.profile" : "profil",
     "SGS.marshal.keywords" : "Mots-Clés",
-    "SGS.marshal.occupational_hazard" : "Déformation(s) professionelle(s)",
+    "SGS.marshal.occupationalHazard" : "Déformation(s) professionelle(s)",
 
     "SGS.outlaw.biography" : "Biographie",
     "SGS.outlaw.motivation" : "Motivation",
