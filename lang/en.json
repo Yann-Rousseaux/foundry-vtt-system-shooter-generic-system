@@ -22,7 +22,7 @@
     "SGS.marshal.lastname" : "Lastname",
     "SGS.marshal.profile" : "profile",
     "SGS.marshal.keywords" : "Keywords",
-    "SGS.marshal.occupational_hazard" : "Occupational Hazard",
+    "SGS.marshal.occupationalHazard" : "Occupational Hazard",
 
     "SGS.outlaw.biography" : "Biography",
     "SGS.outlaw.motivation" : "Motivation",

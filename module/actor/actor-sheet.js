@@ -8,8 +8,8 @@ export class shootergenericsystemActorSheet extends ActorSheet {
 
   /** @override */
   static get defaultOptions() {
-    // let sideBarWidth = 300;
-    let sheetHeight = window.innerHeight;
+    let sideBarWidth = 800;
+    let sheetHeight = window.innerHeight > sideBarWidth ? sideBarWidth : window.innerHeight;
     let sheetWidth = 550;
     let sheetLeftPostion = 0;
     let sheetTopPostion = 0;
