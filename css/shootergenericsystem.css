@@ -278,6 +278,10 @@ label.bio-title {
     text-transform: uppercase;
   }
 
+  td.centered {
+    text-align: center;
+  }
+
 /* NAVIGATION */
 
 .sheet nav.sheet-tabs {

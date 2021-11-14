@@ -12,10 +12,10 @@
         {{#each data.data.specialisations as | specialisation key|}}
         {{#if specialisation}}
         <tr class="spec">
-            <td>{{specialisation.label}}</td>
-            <td>{{specialisation.value}}</td>
-            <td>{{specialisation.parentName}}</td>
-            <td class="d-flex-item">
+            <td><b>{{specialisation.label}}</b></td>
+            <td class="centered">{{specialisation.value}}</td>
+            <td class="centered"><i>{{specialisation.parentName}}</i></td>
+            <td class="d-flex-item centered">
                 <a  class="roll-spec"
                     data-spec_value="{{specialisation.value}}" 
                     data-spec_label="{{specialisation.label}}"
@@ -27,7 +27,7 @@
                     <img src="systems/shootergenericsystem/icons/d6_2_black.png" alt="roll">
                 </a>
             </td>
-            <td>
+            <td class="centered">
                 <a class="spec-action" data-action="remove" data-key="{{key}}">
                     <i class="fas fa-trash"></i>
                 </a>
