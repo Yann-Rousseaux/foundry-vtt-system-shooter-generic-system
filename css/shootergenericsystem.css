@@ -3,6 +3,10 @@
 .window-app {
   font-family: "Roboto", sans-serif;
 }
+section > form > div > div {
+  line-height : 2em;
+  padding : 10px;
+}
 
 .rollable:hover, .rollable:focus {
   color: #000;
